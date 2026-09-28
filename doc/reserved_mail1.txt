@@ -1,0 +1,31 @@
+ホームページからご予約がありました。
+------------------------------------------------------------
+名前 = [your-name]様
+メールアドレス = [your-email]
+電話番号　= [your-tel]
+日付  = [reservation-month]月[reservation-day]日
+時間 = [reservation-hour]時[reservation-minute]分
+ご希望のコース = [course-type] [course-duration]
+その他のコース = [other-course]
+デート併用 = [date-combined]
+3Pコースのボーイ絡み = [boy-interaction]
+指名中のお食事　= [has-meal-during-course]
+━━━━━━━━━━━━━━━━━
+ご希望のボーイ　　= [cast-name]
+ボーイの指名経験　= [has-previous-cast]
+アナルプレイ　　　= [cast-anal-play]
+━━━━━━━━━━━━━━━━━
+2人目のボーイ　　= [cast2-name]
+ボーイの指名経験　= [has-previous-cast2]
+アナルプレイ　　　= [cast2-anal-play]
+━━━━━━━━━━━━━━━━━
+当店のご利用経験　= [has-previous-visit]
+割引チケット　　　= [has-discount-ticket]
+━━━━━━━━━━━━━━━━━
+出張先 = [delivery-location]
+プレイ・コースでの要望 = [play-requests]
+
+--
+このメールは [_date][_time] chance代々木のお問い合わせフォームから送信されました
+IP:[_remote_ip] 
+user agent: [_user_agent]

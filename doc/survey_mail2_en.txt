@@ -1,0 +1,42 @@
+[your-name],
+Thank you for completing our customer survey.
+Your survey has been submitted with the following details:
+
+Message Content
+
+Customer Name: [your-name]
+Email Address: [your-email]
+Service Date & Time: [reservation-month] [reservation-day] [reservation-hour][reservation-minute]
+Service Course: [course-type] [course-duration]
+Other Course Details:
+[other-course]
+
+Name of the Boy: [cast-name]
+Number of Visits: [visit-count]
+Comments about the boy (good points, bad points, impressions, etc.):
+[cast-review]
+[publisibal-cast-review]
+
+First impression when meeting the boy: [cast-impression]
+Gap between photo and reality: [cast-photo-gap]
+Language/Communication skills: [cast-language]
+Services you wanted but didn't receive: [cast-service]
+
+Would you book this boy again in the future?: [cast-again]
+
+Reception service: [reception-response]
+Any concerns about phone service or customer service: [reception-response-concern]
+How was our website?:
+[website-concern]
+
+How was our system and course offerings?:
+[system-concern]
+
+How was our pricing?:
+[price-concern]
+
+Please share any opinions, requests, or feedback about our store:
+[other-concern]
+
+--
+This email was sent from Chance's contact form.

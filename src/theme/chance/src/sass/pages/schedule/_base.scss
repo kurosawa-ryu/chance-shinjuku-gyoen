@@ -1,0 +1,303 @@
+@charset "utf-8";
+@import "../../common/basic";
+
+main.sub_main {
+  .schedule {
+    .card {
+      margin-bottom: 0;
+      background-color: #fff;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      text-align: center;
+
+      .card-heading {
+        padding: 0 8px;
+        border-bottom: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: #fff;
+        background-color: #000;
+        line-height: 2;
+
+        @include media-breakpoint-down(lg) {
+          padding: 0 5px;
+        }
+      }
+
+      .card-body {
+        padding: 8px;
+
+        @include media-breakpoint-down(lg) {
+          padding: 5px;
+        }
+      }
+    }
+
+    article {
+      padding: 25px;
+      background: url("../img/page/schedule-bg.jpg") left top repeat;
+      position: relative;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 12px;
+        padding: 10px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: solid 110px transparent;
+        border-left: solid 180px  var(--shop-main-color);
+        z-index: 0;
+      }
+
+      + article {
+        margin-top: 30px;
+      }
+
+      ul {
+        position: relative;
+        z-index: 10;
+        margin-bottom: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        li {
+          flex: 0 1 112px;
+          display: flex;
+          flex-flow: column nowrap;
+
+          &:nth-of-type(1) {
+            flex: 1 0 auto;
+          }
+
+          .card-head {
+            flex: 0 0 28px;
+          }
+
+          .card-body {
+            flex: 1 0 auto;
+            display: flex;
+            align-self: center;
+            align-items: center;
+          }
+
+          + li.card {
+            border-left: solid 1px #ddd;
+          }
+
+          @include media-breakpoint-down(lg) {
+            flex: 0 1 12.5%;
+
+            &:nth-of-type(1) {
+              flex: 1 2 auto;
+            }
+          }
+
+          &:nth-of-type(2) .card-heading {
+            background-color:  var(--shop-main-color);
+          }
+        }
+      }
+    }
+
+    .noupdated {
+      margin: 28px 0;
+      text-align: center;
+      font-weight: 700;
+      font-size: 16px;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 30px;
+      }
+    }
+
+    .days-slider {
+      margin-bottom: 2rem;
+      position: relative;
+      min-height: 4.5rem;
+
+      @include media-breakpoint-down(sm) {
+        min-height: 3.75rem;
+      }
+
+      .overflow-hidden {
+        min-height: inherit;
+      }
+
+      .d-flex {
+        min-height: inherit;
+      }
+
+      .btn {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255 255 255 / 90%);
+        border-color: var(--shop-main-color);
+        color: var(--shop-main-color);
+        z-index: 10;
+        transition: all 0.2s ease;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.start-0 {
+          left: 0;
+        }
+
+        &.end-0 {
+          right: 0;
+        }
+
+        &:hover {
+          background-color: var(--shop-main-color);
+          color: #fff;
+          transform: translateY(-50%) scale(1.1);
+        }
+
+        @include media-breakpoint-down(sm) {
+          width: 1.5rem;
+          height: 1.5rem;
+          font-size: 0.75rem;
+        }
+      }
+
+      .date-item {
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+        margin: 0.25rem;
+        border-radius: 0.5rem;
+        height: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include media-breakpoint-down(sm) {
+          height: 3rem;
+        }
+
+        &:hover {
+          background-color: var(--shop-main-color);
+          color: #fff;
+          transform: translateY(-2px);
+
+          .text-muted {
+            color: rgb(255 255 255 / 80%) !important;
+          }
+        }
+
+        &.active {
+          background-color: var(--shop-main-color);
+          color: #fff;
+          box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+          transform: translateY(-2px);
+
+          .text-muted {
+            color: rgb(255 255 255 / 80%) !important;
+          }
+        }
+
+        .fw-bold {
+          font-size: 1rem;
+          line-height: 1.2;
+          margin: 0;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 0.875rem;
+          }
+        }
+
+        .smaller {
+          font-size: 0.75rem;
+          line-height: 1.2;
+          margin: 0;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 0.675rem;
+          }
+        }
+      }
+    }
+
+    .schedule-slider {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+
+      &__viewport {
+        overflow: hidden;
+      }
+
+      &__container {
+        display: flex;
+        touch-action: pan-y pinch-zoom;
+      }
+
+      &__slide {
+        flex: 0 0 14.286%;
+        min-width: 0;
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+          flex: 0 0 20%;
+        }
+
+        @include media-breakpoint-down(xs) {
+          flex: 0 0 25%;
+        }
+      }
+
+      &__button {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(255 255 255 / 90%);
+        border-color: var(--shop-main-color);
+        color: var(--shop-main-color);
+        z-index: 10;
+        transition: all 0.2s ease;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        border: 1px solid;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--shop-main-color);
+          color: #fff;
+          transform: translateY(-50%) scale(1.1);
+        }
+
+        &--prev {
+          left: -1rem;
+        }
+
+        &--next {
+          right: -1rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+          width: 1.5rem;
+          height: 1.5rem;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

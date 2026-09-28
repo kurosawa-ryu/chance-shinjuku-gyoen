@@ -1,0 +1,64 @@
+services:
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+  wordpress:
+    build:
+      context: .
+    depends_on:
+      - db
+      - mail
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      BACKUP_FILE_PATH: /opt/dump/backup.wpress
+    ports:
+      - "8003:80"
+    volumes:
+      - ./src/theme/chance:/var/www/html/wp-content/themes/chance:cached
+      - ./src/plugins:/var/www/html/wp-content/plugins:cached
+      - ./dump:/opt/dump:cached
+      - wordpress_data:/var/www/html
+    platform: linux/amd64
+  frontend:
+    build:
+      context: .
+      dockerfile: dockerfile.front
+    working_dir: /app
+    command: /bin/sh -c "yarn install && yarn dev"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  mail:
+    # Web画面: http://localhost:19982
+    image: axllent/mailpit:latest
+    ports:
+      # - "19925:1025"
+      - "19984:8025"
+    volumes:
+      - mail_data:/data
+    environment:
+      TZ: Asia/Tokyo
+      MP_MAX_MESSAGES: 5000
+      MP_DATABASE: /data/mailpit.db
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
+volumes:
+  db_data:
+  wordpress_data:
+  mail_data:
+  node_modules:

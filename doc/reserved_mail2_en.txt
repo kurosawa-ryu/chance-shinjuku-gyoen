@@ -1,0 +1,38 @@
+Thank you for your reservation request.
+Your request has been submitted with the following details.
+
+Your reservation is not yet confirmed at this point.
+Our reception staff will review the details and contact you with confirmation. Please wait for our response.
+
+━━━━━━━━━━━━━━━━━
+Reservation Details
+━━━━━━━━━━━━━━━━━
+
+Name: [your-name]
+Email: [your-email]
+Phone: [your-tel]
+Date & Time: [reservation-month]/[reservation-day] [reservation-hour]:[reservation-minute]~
+Desired Course: [course-type] [course-duration]
+Other Course: [other-course]
+Date Combined: [date-combined]
+Desired Boy: [cast-name]
+Second Boy: [cast2-name]
+Boy Interaction: [boy-interaction]
+Anal Play: [cast-anal-play]
+Second Boy Anal Play: [cast2-anal-play]
+Outcall Location: [delivery-location]
+Discount Ticket: [has-discount-ticket]
+Meal Availability: [has-meal-during-course]
+Previous Boy Appointment: [has-previous-cast]
+Second Boy Previous Appointment: [has-previous-cast2]
+Store Visit History: [has-previous-visit]
+Play/Course Requests: [play-requests]
+━━━━━━━━━━━━━━━━━
+
+※Email reservations may take some time to respond (we can respond within 24 hours). For same-day or urgent reservations, please call us.
+
+━━━━━━━━━━━━━━━━━
+CHANCE Yoyogi
+HP: http://chance-yoyogi.jp.localhost:8001
+TEL:
+━━━━━━━━━━━━━━━━━

@@ -1,0 +1,119 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# プロジェクト構造に関するルール
+
+## ディレクトリ構造
+```
+.
+├── src/                    # ソースコード
+│   ├── theme/             # WordPressテーマ
+│   │   └── chance/        # メインテーマ
+│   │       ├── inc/       # PHPの機能ファイル
+│   │       │   ├── functions-default.php  # 基本機能
+│   │       │   ├── function.php          # 独自関数
+│   │       │   ├── custom-admin.php      # 管理画面カスタマイズ
+│   │       │   ├── insert-src.php        # スクリプト・スタイル読み込み
+│   │       │   ├── custom-post.php       # カスタム投稿タイプ
+│   │       │   ├── cast-function.php     # キャスト関連機能
+│   │       │   ├── news-function.php     # ニュース関連機能
+│   │       │   ├── seo.php              # SEO設定
+│   │       │   └── pages/               # ページ固有の機能
+│   │       ├── src/                     # フロントエンド開発用ソース
+│   │       │   ├── ts/                  # TypeScriptファイル
+│   │       │   ├── sass/                # Sassファイル
+│   │       │   │   ├── variables/       # 変数定義
+│   │       │   │   ├── common/          # 共通スタイル
+│   │       │   │   │   ├── _basic.scss   # 基本スタイル
+│   │       │   │   │   ├── _global.scss  # グローバルスタイル
+│   │       │   │   │   ├── _main.scss    # メインスタイル
+│   │       │   │   │   └── _responsive.scss # レスポンシブスタイル
+│   │       │   │   ├── components/      # コンポーネント
+│   │       │   │   └── pages/           # ページ固有のスタイル
+│   │       │   └── img/                 # 画像ファイル
+│   │       ├── templates/               # WordPressテンプレート
+│   │       ├── partials/                # 部分テンプレート
+│   │       │   └── header/              # ヘッダー関連
+│   │       ├── assets/                  # コンパイル済みアセット
+│   │       ├── functions.php            # テーマ機能定義
+│   │       └── style.css                # テーマ情報
+│   └── plugins/           # WordPressプラグイン
+│       └── work-manager/  # スタッフ管理プラグイン
+├── scripts/               # ビルドスクリプトなど
+├── .devcontainer/         # 開発環境設定
+├── .github/               # GitHub Actions設定
+└── .cursor/              # Cursor IDE設定
+    └── rules/            # プロジェクトルール
+```
+
+## 設定ファイル
+// ... existing code ...
+
+## ディレクトリ規約
+
+### テーマディレクトリ (`src/theme/chance/`)
+- `inc/`: PHPの機能ファイル
+  - `functions-default.php`: 基本機能（画像サイズ、フォーム設定など）
+  - `function.php`: 独自関数（デバイス判定、スケジュール機能など）
+  - `custom-admin.php`: 管理画面のカスタマイズ
+  - `insert-src.php`: スクリプトとスタイルの読み込み設定
+  - `custom-post.php`: カスタム投稿タイプの定義
+  - `cast-function.php`: キャスト関連の機能
+  - `news-function.php`: ニュース関連の機能
+  - `seo.php`: SEO関連の設定
+  - `pages/`: ページ固有の機能
+
+- `src/`: フロントエンド開発用ソース
+  - `ts/`: TypeScriptファイル
+  - `sass/`: Sassファイル
+    - `variables/`: 変数定義
+    - `common/`: 共通スタイル
+      - `_basic.scss`: 基本スタイル（フォントサイズ、マージン、パディングなど）
+      - `_global.scss`: グローバルスタイル（全体の基本設定）
+      - `_main.scss`: メインスタイル（共通コンポーネント）
+      - `_responsive.scss`: レスポンシブ対応
+    - `components/`: コンポーネント別のスタイル
+    - `pages/`: ページ固有のスタイル
+  - `img/`: 画像ファイル
+
+- `templates/`: WordPressテンプレート
+- `partials/`: 部分テンプレート（ヘッダー、フッターなど）
+- `assets/`: コンパイル済みのCSS、JavaScript
+- `functions.php`: テーマの機能定義
+- `style.css`: テーマ情報
+
+# プロジェクト構造に関するルール
+
+// ... existing code ...
+
+## ファイル構造の更新規約
+1. ディレクトリ構造の変更
+   - 新規ディレクトリを作成する場合は、このドキュメントに追加すること
+   - ディレクトリの役割と目的を明確に記載すること
+   - 変更履歴を記録すること
+
+2. 更新手順
+   - ディレクトリ構造を変更する際は、以下の手順で更新すること：
+     1. チームメンバーと変更内容を共有
+     2. `.cursor/rules/dev-rules/project-structure.mdc` を更新
+     3. 変更理由と影響範囲をコミットメッセージに記載
+     4. レビュー後にマージ
+
+3. 定期的なメンテナンス
+   - 月1回、ディレクトリ構造の確認と文書の更新を行うこと
+   - 不要になったディレクトリや説明は適切に削除・更新すること
+   - 新規追加されたディレクトリが文書化されているか確認すること
+
+4. 文書化ルール
+   - ディレクトリの説明は簡潔かつ具体的に記載
+   - 特別な規約がある場合は、その旨を明記
+   - 依存関係がある場合は、それを明確に示すこと
+
+5. レビュー項目
+   - ディレクトリ構造が規約に準拠しているか
+   - 必要な説明が漏れなく記載されているか
+   - 命名規則が守られているか
+   - セキュリティ上の考慮が必要な点が明記されているか
+

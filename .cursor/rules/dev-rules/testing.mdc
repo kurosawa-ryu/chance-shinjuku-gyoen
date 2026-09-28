@@ -1,0 +1,55 @@
+---
+description: 
+globs: **/*.tsx,**/*.php,**/*.ts
+alwaysApply: false
+---
+
+# テストに関して
+
+まず、このファイルを参照したら、*必ず最初に「テスト規約参照」を発言すること*
+
+このプロジェクトではテストとLintによるコードの品質担保を行ってます。
+コードを変更した際は*テスト及びLintを必ず実行し*、不備や指摘がなくなるまで修正を行ってください。
+
+## テスト
+- 可能な限り、テストを作成してコードの動作を担保してください。
+- 重複したテストは必要ありません。
+- テストが複雑になりすぎる際は、テスト対象を分割して小さな関数やクラスに書き換えを推奨します。
+
+### php
+- phpのテストはphpunitを用います。以下コマンドで実行できます。
+   `composer test`
+- テストの実行は必要に応じて個別のファイルを指定して実行することもできます。
+- テストファイルは`tests/`配下にthemeとpluginそれぞれ分けて配置されています。
+- テストの設定は`phpcs.xml`を参照してください。
+
+### typescript/javascript
+- typescript/javascriptにはテストが用意されていません。
+  - 今後追加を予定しています。
+
+## Lint
+- Lintの修正にはautofixやフォーマッターが利用可能な場合があります
+
+### php
+- phpのLintはphpcsを用います。以下コマンドで実行できます。
+   `composer lint`
+- Lintの実行は必要に応じて個別のファイルを指定して実行することもできます。
+- `wp-coding-standards/wpcs`の規約を遵守しています。
+- 個別の規約に関しては`phpcs.xml`を参照して
+- 以下のコマンドで自動修正を試みる事ができます
+  `composer lint:fix`
+
+### typescript/javascript
+- typescript/javascriptのLintはBiomeを用います。以下コマンドで実行できます。
+   `yarn lint:js`
+- 以下のコマンドで自動修正を試みる事ができます
+  `yarn lint:js:fix`
+
+### css/sass/scss
+- css/sass/scssはstylelintを用います
+  `yarn lint:css`
+- 以下のコマンドで自動修正を試みる事ができます
+  `yarn lint:css:fix`
+
+## 注意事項
+- ソースコードを変更した際は必ず指摘が無いことを確認してください。

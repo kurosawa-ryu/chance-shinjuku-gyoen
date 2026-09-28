@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+.btn,
+a.btn {
+  border-radius: 0;
+  padding: 12px;
+  transition: 0.25s;
+
+  &-red {
+    color: #fff;
+    background-color: var(--shop-main-color);
+    border-color: var(--shop-main-color);
+
+    &:hover {
+      color: var(--shop-main-color);
+      background-color: transparent;
+    }
+  }
+
+  &-black {
+    color: #fff;
+    background-color: #111;
+    border-color: #111;
+
+    &:hover {
+      color: #111;
+      background-color: transparent;
+    }
+  }
+
+  &-sky {
+    color: #fff;
+    background-color: #1da1f2;
+    border-color: #1da1f2;
+
+    &:hover {
+      color: #1da1f2;
+      background-color: transparent;
+    }
+  }
+
+  &-green {
+    color: #fff;
+    background-color: #17a60c;
+    border-color: #17a60c;
+
+    &:hover {
+      color: #17a60c;
+      background-color: transparent;
+    }
+  }
+
+  &-orange {
+    color: #fff;
+    background-color: var(--shop-main-color);
+    border-color: var(--shop-main-color);
+
+    &:hover {
+      color: var(--shop-main-color);
+      background-color: transparent;
+    }
+  }
+} 

@@ -1,0 +1,11 @@
+name: Deploy Production
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release
+jobs:
+  deploy:
+    uses: ./.github/workflows/_deploy.yml
+    with:
+      domain: chance-yoyogi.jp

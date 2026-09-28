@@ -1,0 +1,139 @@
+name: Sync Main to Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-sync-pr:
+    runs-on: ubuntu-latest
+    # 無限ループ防止: github-actions[bot]による自動コミットはスキップ
+    if: github.event.pusher.name != 'github-actions[bot]'
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      # 1. 両ブランチの履歴を取得
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: main
+
+      # 2. mainとreleaseの差分をチェック
+      - name: Check if sync is needed
+        id: check_diff
+        run: |
+          git fetch origin release:release
+          if git diff --quiet main release; then
+            echo "sync_needed=false" >> $GITHUB_OUTPUT
+            echo "No differences between main and release"
+          else
+            echo "sync_needed=true" >> $GITHUB_OUTPUT
+            echo "Differences found between main and release"
+          fi
+
+      # 3. コミットログを取得（PR本文用）
+      - name: Get commit log for PR body
+        if: steps.check_diff.outputs.sync_needed == 'true'
+        id: get_commits
+        run: |
+          COMMITS=$(git log --oneline release..main --pretty=format:"- %h %s" | head -20)
+          echo "commits<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      # 4. 既存PRの確認
+      - name: Check existing PR
+        if: steps.check_diff.outputs.sync_needed == 'true'
+        id: check_pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 既存のPRを検索（mainブランチからreleaseブランチへのPR）
+          PR_NUMBER=$(gh pr list --head main --base release --json number --jq '.[0].number')
+          if [ -n "$PR_NUMBER" ]; then
+            echo "pr_exists=true" >> $GITHUB_OUTPUT
+            echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+            PR_URL=$(gh pr view $PR_NUMBER --json url --jq '.url')
+            echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+          else
+            echo "pr_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      # 5. PR本文の準備
+      - name: Prepare PR body
+        if: steps.check_diff.outputs.sync_needed == 'true'
+        id: pr_body
+        run: |
+          cat > pr_body.md <<'EOF'
+          ## 概要
+          mainブランチの最新変更をreleaseブランチに同期し本番にデプロイするためのPRです。
+
+          ## 変更内容
+          mainブランチに以下のコミットが追加されました：
+
+          ${{ steps.get_commits.outputs.commits }}
+
+          ## 確認事項
+          - [ ] ステージング環境で動作確認が完了している
+          - [ ] コンフリクトがない、またはコンフリクトを解決した
+
+          ## デプロイ手順
+          1. このPRをレビューして承認する
+          2. マージ後、[Deploy Production](https://github.com/${{ github.repository }}/actions/workflows/deploy-production.yml)を手動実行する
+
+          ---
+          🤖 このPRは自動生成されました。mainブランチに追加の変更がマージされると、このPRに自動的に反映されます。
+          EOF
+
+      # 6. 新規PR作成
+      - name: Create new PR
+        if: steps.check_diff.outputs.sync_needed == 'true' && steps.check_pr.outputs.pr_exists == 'false'
+        id: create_pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_URL=$(gh pr create \
+            --title "[Auto] 本番リリース" \
+            --body-file pr_body.md \
+            --base release \
+            --head main \
+            --draft \
+            --label "release")
+          echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+          echo "operation=created" >> $GITHUB_OUTPUT
+
+      # 7. 既存PR更新
+      - name: Update existing PR
+        if: steps.check_diff.outputs.sync_needed == 'true' && steps.check_pr.outputs.pr_exists == 'true'
+        id: update_pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr edit ${{ steps.check_pr.outputs.pr_number }} --body-file pr_body.md
+          echo "pr_url=${{ steps.check_pr.outputs.pr_url }}" >> $GITHUB_OUTPUT
+          echo "operation=updated" >> $GITHUB_OUTPUT
+
+      # 8. Slack通知（PR作成時）
+      - name: Notify Slack on PR creation
+        if: steps.check_diff.outputs.sync_needed == 'true' && steps.create_pr.outputs.operation == 'created'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: "【代々木|リリースPR作成】\nmain → release の同期PRが作成されました\n${{ steps.create_pr.outputs.pr_url }}\n\nレビューをお願いします。"
+
+      # 9. Slack通知（PR更新時）
+      - name: Notify Slack on PR update
+        if: steps.check_diff.outputs.sync_needed == 'true' && steps.update_pr.outputs.operation == 'updated'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: "【代々木|リリースPR更新】\nmain → release の同期PRが更新されました\n${{ steps.update_pr.outputs.pr_url }}\n\n新しい変更が追加されています。"

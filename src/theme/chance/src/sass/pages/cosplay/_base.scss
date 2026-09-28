@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+main.sub_main {
+  .cosplay {
+    .img_box {
+      border: solid 3px  var(--shop-main-color);
+      background-color: #fff;
+      position: relative;
+
+      h3 {
+        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: normal;
+        text-align: center;
+        padding: 0 5px;
+      }
+
+      p {
+        padding: 0 5px;
+
+        &.red {
+          color: #f00;
+          margin-bottom: 5px;
+          text-align: center;
+        }
+
+        &.ind {
+          text-indent: -0.6em;
+        }
+      }
+    }
+  }
+}

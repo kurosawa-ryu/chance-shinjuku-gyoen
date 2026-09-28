@@ -1,0 +1,426 @@
+@charset "utf-8";
+
+/* ========================================================
+                        サイドナビ
+========================================================= */
+#side_nav {
+  width: $side;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  box-shadow: 0 0 20px rgba(#040000, 0.14);
+  z-index: 99999;
+
+  .gnav {
+    height: 100%;
+    background-color: #fff;
+    padding: 5px 10px;
+    max-height: 1000px;
+    min-height: 600px;
+
+    @include verticalFlex;
+
+    .grid_1 {
+      flex-basis: 7.812%;
+    }
+
+    .grid_2 {
+      flex-basis: 55%;
+    }
+
+    .grid_3 {
+      flex-basis: 5.937%;
+    }
+
+    .grid_4,
+    .grid_5 {
+      flex-basis: 3.125%;
+    }
+
+    .grid_6,
+    .grid_7,
+    .grid_8,
+    .grid_9 {
+      flex-basis: 6.25%;
+    }
+
+    h1 {
+      line-height: 1;
+      margin-bottom: 0;
+
+      @include verticalFlex;
+
+      align-items: center;
+    }
+
+    .gnav_list {
+      position: relative;
+
+      ul {
+        // @include abPosition(5px, 10px, 5px, 10px);
+        @include verticalFlex;
+
+        border-top: solid 1px #111;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 24px;
+          height: 4px;
+          background-color: #111;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        > li {
+          border-bottom: solid 1px #ddd;
+          flex-grow: 1;
+          flex-basis: 48px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          > a {
+            color: map-get($color, "black");
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+
+            &:hover {
+              background-color: #000;
+              color: #fff;
+            }
+          }
+
+          &.nagoya > a {
+            color: map-get($color, "sky");
+
+            &:hover {
+              background-color: map-get($color, "sky");
+              color: #fff;
+            }
+          }
+
+          &.osaka > a {
+            color: map-get($color, "green");
+
+            &:hover {
+              background-color: map-get($color, "green");
+              color: #fff;
+            }
+          }
+
+          &.tokyo > a {
+            color: map-get($color, "red");
+
+            &:hover {
+              background-color: map-get($color, "red");
+              color: #fff;
+            }
+          }
+
+          &.namba > a {
+            color: map-get($color, "purple");
+
+            &:hover {
+              background-color: map-get($color, "purple");
+              color: #fff;
+            }
+          }
+
+          &.rodan > a {
+            color: map-get($color, "yellow");
+
+            &:hover {
+              background-color: map-get($color, "yellow");
+              color: #fff;
+            }
+          }
+
+          &.all > a {
+            color: #aaa;
+
+            &:hover {
+              background-color: #aaa;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .contact {
+      position: relative;
+
+      > span {
+        color: #fff;
+        background-color: #111;
+        display: block;
+        text-align: center;
+        border: solid 1px #111;
+
+        @include abPosition(5px, 0, 5px, 0);
+        @include verticalFlex;
+      }
+    }
+
+    .header-phone,
+    .mail {
+      @include verticalFlex;
+
+      a {
+        display: block;
+        letter-spacing: -0.4px;
+        font-size: 14px;
+
+        i {
+          height: 24px;
+          width: auto;
+          color:  var(--shop-main-color);
+          margin-right: 5px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .address {
+      border-top: solid 1px #ddd;
+
+      @include verticalFlex;
+
+      span {
+        text-align: left;
+        font-weight: bold;
+        font-size: 12px;
+        color: map-get($color, "gray");
+        line-height: 18px;
+        white-space: nowrap;
+
+        i {
+          color:  var(--shop-main-color);
+          margin-right: 8px;
+          vertical-align: middle;
+          margin-top: 2px;
+        }
+      }
+    }
+
+    .time {
+      @include verticalFlex;
+
+      padding-bottom: 5px;
+    }
+
+    .tw, .line {
+      position: relative;
+
+      a {
+        padding: 5px 10px;
+
+        @include abPosition(5px, 0, 5px, 0);
+
+        img{
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .tw {
+      a {
+        background-color: #111;
+        padding: 5px 10px;
+      }
+    }
+
+    .line {
+      a {
+        background-color: #00b900;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .gnav {
+      font-size: 12px;
+
+      .grid_2 {
+        flex-basis: 45%;
+      }
+
+      .grid_6 {
+        flex-basis: 8%;
+      }
+
+      .grid_7 {
+        flex-basis: 8%;
+      }
+
+      .grid_8 {
+        flex-basis: 8%;
+      }
+
+      .grid_9 {
+        flex-basis: 8%;
+      }
+
+      .gnav_list {
+        ul {
+          > li {
+            flex-basis: 36px;
+          }
+        }
+      }
+
+      .contact {
+        > span {
+          font-size: 12px;
+        }
+      }
+
+      .header-phone,
+      .mail {
+        a {
+          font-size: 12px;
+        }
+      }
+
+      .address {
+        span {
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+
+  #main_container {
+    margin-left: 180px;
+  }
+
+  footer .nav-justified li a {
+    font-size: 12px;
+  }
+
+}
+
+// @media(width <= 767px) {
+@include media-breakpoint-down(md){
+  #side_nav {
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 0 10px rgb(4 0 0 / 65%);
+
+    .gnav {
+      height: auto;
+      min-height: auto;
+      display: block;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+      }
+
+      .sp_icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        a {
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            font-size: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+            display: grid;
+            place-items: center;
+          }
+        }
+      }
+
+      .sp_phone_icon {
+          font-size: 2.5rem;
+          height: 2.5rem;
+          padding: 0;
+      }
+
+      h1 {
+        display: block;
+        font-size: 1em;
+        line-height: 50px;
+
+        img {
+          height: 2.5rem;
+          width: auto;
+          display: inline-block;
+        }
+      }
+
+      .grid_2,
+      .grid_3,
+      .grid_4,
+      .grid_5,
+      .grid_6,
+      .grid_7,
+      .grid_8,
+      .grid_9 {
+        display: none !important;
+      }
+    }
+  }
+}
+
+// 営業時間
+
+.open-close__title {
+  background-color: var(--shop-main-color);
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  font-size: 1rem;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+
+  div:nth-child(1),
+  div:nth-child(3){
+    padding: 0.4rem 0.6rem;
+  }
+
+  div:nth-child(1) {
+    background-color: var(--shop-main-color);
+  }
+
+  div:nth-child(2),
+  div:nth-child(3) {
+    background-color: black;
+  }
+
+  div:nth-child(2) {
+    padding: 0.4rem;
+    clip-path: polygon(150% 0%, 100% 100%, 10% 100%, 100% 0);
+  }
+}
+
+.open-close__body {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

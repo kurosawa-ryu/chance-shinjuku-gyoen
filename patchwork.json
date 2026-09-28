@@ -1,0 +1,14 @@
+{
+	"redefinable-internals": [
+		"gmdate",
+		"strtotime",
+		"time",
+		"abs",
+		"mktime",
+		"range",
+		"array_flip",
+		"explode",
+		"implode",
+		"array_map"
+	]
+}

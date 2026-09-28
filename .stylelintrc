@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "no-descending-specificity": null,
+    "scss/no-global-function-names": null,
+    "no-duplicate-selectors": null,
+    "scss/at-mixin-pattern": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "number-max-precision": 3
+  }
+}

@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+main.sub_main {
+  .howto {
+    .bd_red {
+      padding: 30px;
+    }
+
+    h3 {
+      padding: 5px 10px;
+      color: #fff;
+      background-color:  var(--shop-main-color);
+      display: inline-block;
+      margin-bottom: 0;
+      font-size: 20px;
+
+      &.dark {
+        background-color: #111;
+      }
+    }
+
+    .img_box {
+      .relative,
+      p {
+        max-width: 195px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .num {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        font-family: "Times New Roman";
+        font-style: italic;
+        font-weight: bold;
+        font-size: 30px;
+        padding: 6px 10px;
+        line-height: 1;
+        z-index: 100;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-bottom: solid 70px transparent;
+          border-left: solid 70px transparent;
+          z-index: -1;
+        }
+      }
+
+      &:nth-of-type(1) .num::after {
+        border-left-color: rgba(#52b8ff, 0.7);
+      }
+
+      &:nth-of-type(2) .num::after {
+        border-left-color: rgba(#39e61e, 0.7);
+      }
+
+      &:nth-of-type(3) .num::after {
+        border-left-color: rgba(#ff8a00, 0.7);
+      }
+
+      &:nth-of-type(4) .num::after {
+        border-left-color: rgba(#ff19c1, 0.7);
+      }
+    }
+  }
+}

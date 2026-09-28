@@ -1,0 +1,78 @@
+name: Scheduled Production Release (2026-09-01 00:00 JST)
+
+# 2026-09-01 00:00 JST (= 2026-08-31 15:00 UTC) に main を release へマージし本番デプロイする。
+# 実行後は不要になるのでこのファイルを削除すること。
+on:
+  schedule:
+    - cron: '00 15 31 8 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.guard.outputs.proceed }}
+    steps:
+      - name: 実行日ガード
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "手動実行: 待機せず即デプロイ"
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          TODAY=$(date -u +%Y-%m-%d)
+          if [ "$TODAY" = "2026-08-31" ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "対象日 (2026-08-31 UTC) ではないためスキップ: $TODAY"
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 2026-09-01 00:00 JST まで待機
+        if: steps.guard.outputs.proceed == 'true' && github.event_name == 'schedule'
+        run: |
+          TARGET=1788188400  # 2026-08-31T15:00:00Z = 2026-09-01T00:00:00+09:00
+          NOW=$(date -u +%s)
+          if [ "$NOW" -lt "$TARGET" ]; then
+            echo "待機 $((TARGET - NOW)) 秒"
+            sleep $((TARGET - NOW))
+          else
+            echo "既に目標時刻を過ぎているため即実行"
+          fi
+          echo "現在時刻 (UTC): $(date -u)"
+
+      - name: Checkout release
+        if: steps.guard.outputs.proceed == 'true'
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: release
+
+      - name: main を release にマージして push
+        if: steps.guard.outputs.proceed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git merge --no-ff origin/main -m "chore(release): 2026-09-01 00:00 JST 定時リリース (main -> release)"
+          git push origin release
+
+      - name: slack notification (失敗時)
+        if: failure()
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: "【代々木|定時リリース失敗】\n2026-09-01 00:00 JST の本番デプロイ準備に失敗しました\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  deploy:
+    needs: prepare
+    if: needs.prepare.outputs.proceed == 'true'
+    uses: ./.github/workflows/_deploy.yml
+    with:
+      domain: chance-yoyogi.jp

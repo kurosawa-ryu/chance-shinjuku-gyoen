@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import "../../common/basic";
+
+.room {
+  .map {
+    width: 100%;
+    display: block;
+  }
+
+  .map__btn {
+    display: block;
+    text-align: center;
+    margin: 0.25rem;
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #111;
+    padding: 8px 10px;
+    line-height: 18px;
+    border-radius: 8px;
+  }
+}

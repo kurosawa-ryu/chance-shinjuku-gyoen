@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+i.micon {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.micon-home::before {
+    font-family: bootstrap-icons;
+    content: "\f3e0";
+  }
+
+  &.micon-mail::before {
+    font-family: bootstrap-icons;
+    content: "\f32a";
+  }
+
+  &.micon-staff::before {
+    font-family: bootstrap-icons;
+    content: "\f4e1";
+  }
+
+  &.micon-pay::before {
+    font-family: bootstrap-icons;
+    content: "\f4b9";
+  }
+
+  &.micon-schedule::before {
+    font-family: bootstrap-icons;
+    content: "\f1f6";
+  }
+
+  &.micon-email::before {
+    font-family: bootstrap-icons;
+    content: "\f32a";
+  }
+
+  &.micon-cert::before {
+    font-family: bootstrap-icons;
+    content: "\f4d0";
+  }
+} 

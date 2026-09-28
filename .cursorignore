@@ -1,0 +1,44 @@
+# 依存関係モジュール
+node_modules/
+vendor/
+.yarn/
+
+# ビルド済みのアセット
+src/theme/chance/assets/
+
+# 環境固有のファイル
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# エディタとOS固有のファイル
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+desktop.ini
+.sass-cache
+
+# ビルドディレクトリ
+dist/
+dist-ssr/
+*.local
+
+# WordPress固有
+wp-admin/
+wp-includes/
+wp-content/plugins/*
+!wp-content/plugins/work-manager/ 
+
+# バックアップファイル
+wp-content/ai1wm-backups/*
+wp-content/themes/*
+!wp-content/themes/chance/

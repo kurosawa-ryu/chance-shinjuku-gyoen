@@ -1,0 +1,45 @@
+---
+description: 技術スタックのルール
+globs: 
+alwaysApply: true
+---
+# このプロジェクトの技術スタック関して
+
+まず、このファイルを参照したら、*必ず最初にこのファイル名を発言すること*
+
+
+## 主要な技術スタック
+以下の技術スタックを使用してます。
+バージョンは可能な限り最新を使っています
+
+- docker
+- PHP
+	- phpunit
+	- phpcs
+	- composer
+	- WordPress
+- nodejs
+	- Yarn
+	- typescript
+	- biome
+	- Bootstrap
+	- bootstrap-icons
+	- postcss
+	- sass
+	- stylelint
+ 	- React
+		- embla-carousel
+		- zod
+		- react-hook-form
+- Vite
+
+その他の技術スタックに関しては`package.json`/`composer.json`/`.tool-versions`を参照してください
+
+## 非推奨な技術スタック
+以下の技術スタックに関しては、*可能な限り使用を避けてください*
+- jquery 
+
+## 注意事項
+- 技術スタックの変更は、プロジェクト全体に影響を与える可能性があるため、慎重に行ってください
+- 変更が必要な場合は、その理由を明確にして承認を得てから行ってください
+- WordPressのバージョン互換性を常に確認してください

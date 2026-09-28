@@ -1,0 +1,20 @@
+ご予約内容
+
+ご希望のコース: [courseType]
+その他のコース: [otherCourse]
+コース時間: [courseDuration]
+予約日時: [month]月[day]日 [hour]:[minute]
+ご指名のボーイ: [castName]
+出張先: [deliveryLocation]
+アナルプレイ: [analPlay]
+割引チケットの有無: [hasDiscountTicket]
+プレイ・コースでのご要望: [playRequests]
+その他メッセージ: [message]
+
+お名前: [name]
+メールアドレス: [email]
+電話番号: [phone]
+過去のボーイ指名有無: [hasPreviousCast]
+当店の利用有無: [hasPreviousVisit]
+
+送信元サイト: {site_url} 

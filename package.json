@@ -1,0 +1,52 @@
+{
+	"name": "chance-yoyogi",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite build --watch",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint:js": "biome check",
+		"lint:js:fix": "biome check --write .",
+		"lint:css": "stylelint ./src/theme/chance/**/*.scss",
+		"lint:css:fix": "stylelint ./src/theme/chance/**/*.scss --fix",
+		"lint": "npm run lint:js && npm run lint:css"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/date-fns": "^2.6.3",
+		"@types/google.maps": "^3.55.8",
+		"@types/jquery": "^3.5.32",
+		"@types/react": "^18.3.2",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.4",
+		"postcss": "^8.5.3",
+		"sass": "1.77.6",
+		"stylelint": "^16.16.0",
+		"stylelint-config-standard-scss": "^14.0.0",
+		"typescript": "^5.2.2",
+		"vite": "^5.1.0"
+	},
+	"dependencies": {
+		"@headlessui/react": "^2.2.0",
+		"@hookform/resolvers": "^5.0.1",
+		"@popperjs/core": "^2.11.8",
+		"axios": "^1.8.3",
+		"bootstrap": "^5.3.5",
+		"bootstrap-icons": "^1.11.3",
+		"date-fns": "^4.1.0",
+		"embla-carousel": "^8.5.2",
+		"embla-carousel-autoplay": "^8.6.0",
+		"embla-carousel-fade": "^8.6.0",
+		"embla-carousel-react": "^8.6.0",
+		"jquery": "1.12.4",
+		"react": "^18.3.1",
+		"react-bootstrap": "^2.10.9",
+		"react-bootstrap-icons": "^1.11.5",
+		"react-dom": "^18.3.1",
+		"react-hook-form": "^7.55.0",
+		"zod": "^3.24.2"
+	},
+	"packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
+}

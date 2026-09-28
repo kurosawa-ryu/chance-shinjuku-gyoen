@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+main {
+  section {
+    &.schedule,
+    &.today_boy,
+    &.all_staff {
+      .d-flex {
+        display: flex;
+        flex-flow: row wrap;
+
+        &::after,
+        &::before {
+          content: none;
+        }
+      }
+
+      .img_box {
+        border: solid 3px var(--shop-main-color);
+        background-color: #fff;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 0 5px 0 rgb(0 0 0 / 50%);
+
+        .staff_img {
+          aspect-ratio: 3/4;
+          max-width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .absolute {
+          @include abPosition(0, auto, auto, 0);
+
+          z-index: 10;
+        }
+
+        h3 {
+          font-size: 24px;
+          margin-top: 5px;
+          margin-bottom: 0;
+          font-weight: normal;
+        }
+
+        p {
+          color: #999;
+          margin-bottom: 0;
+        }
+      }
+
+      .time {
+        text-align: center;
+        color: #fff;
+        display: table;
+        width: 100%;
+
+        @include media-breakpoint-down(sm) {
+          display: block;
+          position: relative;
+        }
+
+        > span {
+          padding: 8px 5px;
+          display: table-cell;
+          background-color: var(--shop-main-color);
+          vertical-align: middle;
+          text-align: center;
+
+          &:nth-last-of-type(1) {
+            background-color: #111;
+          }
+
+          &:nth-of-type(1) {
+            background-color: var(--shop-main-color);
+          }
+
+          @include media-breakpoint-down(sm) {
+            display: block;
+            padding-top: 3px;
+            padding-bottom: 3px;
+
+            &.red {
+              @include abPosition(0, 0, 0, 0);
+              @include verticalFlex;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  main {
+    section {
+      &.today_boy,
+      &.all_staff,
+      &.schedule {
+        .img_box {
+          border-width: 1px;
+
+          .absolute {
+            height: 60px;
+          }
+
+          h3 {
+            font-size: 14px;
+          }
+        }
+
+        .time {
+          border: solid 1px var(--shop-main-color);
+          font-size: 11px;
+        }
+      }
+    }
+  }
+} 

@@ -1,0 +1,79 @@
+<table class="table">
+  <tbody>
+    <tr>
+      <th class="relative">Customer Name<span class="red po-r">*Required</span></th>
+      <td>[text* your-name class:form-control class:input-w1 akismet:author]</td>
+    </tr>
+    <tr>
+      <th class="relative">Email Address<span class="red po-r">*Required</span></th>
+      <td>[email* your-email class:form-control class:input-w2 akismet:author_email]</td>
+    </tr>
+    <tr>
+      <th class="relative">Service Date & Time<span class="red po-r">*Required</span></th>
+      <td>[select* reservation-month "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December"]&nbsp;[select* reservation-day "1st" "2nd" "3rd" "4th" "5th" "6th" "7th" "8th" "9th" "10th" "11th" "12th" "13th" "14th" "15th" "16th" "17th" "18th" "19th" "20th" "21st" "22nd" "23rd" "24th" "25th" "26th" "27th" "28th" "29th" "30th" "31st"]&nbsp;&nbsp;[select* reservation-hour "1 PM" "2 PM" "3 PM" "4 PM" "5 PM" "6 PM" "7 PM" "8 PM" "9 PM" "10 PM" "11 PM" "12 AM" "1 AM"]&nbsp;[select* reservation-minute ":00" ":15" ":30" ":45"]</td>
+    </tr>
+    <tr>
+      <th class="relative">Service Course<span class="red po-r">*Required</span></th>
+      <td>[select* course-type id:course1 "Private Room" "Outcall" "Date Only"]&nbsp;[select* course-duration id:course2 class:mgb10 "60 minutes" "90 minutes" "120 minutes" "180 minutes" "Long 9PM-9AM" "Long 10PM-9AM" "Long 11PM-9AM" "Long 12AM-9AM" "Long 1AM-9AM" "3P 60min" "3P 90min" "3P 120min" "Swap 60min" "Swap 90min" "Masturbation viewing 30min"]<p class="mgt10 mgb5">Other course details</p>[text other-course class:form-control class:input-w2]</tr>
+    <tr>
+      <th class="relative">Name of the Boy<span class="red po-r">*Required</span></th>
+      <td>[text* cast-name class:form-control class:input-w1]</td>
+    </tr>
+    <tr>
+      <th class="relative">Number of Visits<span class="red po-r">*Required</span></th>
+      <td>[radio visit-count use_label_element default:1 "First time" "2nd time" "3rd time or more"]</td>
+    </tr>
+    <tr>
+      <th class="relative">Comments about the boy<br class="hidden-xs">(good points, bad points,<br class="hidden-xs">impressions, etc.)<span class="red po-r">*Required</span></th>
+      <td>[textarea* cast-review class:text-box_2]<br>[radio publisibal-cast-review use_label_element default:1 "Can be published" "Cannot be published"]<br><span class="red">If you allow us to publish part of your review on the staff's personal page, please check this option.<br>We may edit private or personally identifiable content, but will publish as much as possible as is.<br>Thank you for your cooperation.</span></td>
+    </tr>
+    <tr>
+      <th>First impression when<br class="hidden-xs">meeting the boy</th>
+      <td>[radio cast-impression use_label_element default:1 "Very positive" "Good" "Acceptable" "Considered canceling"]</td>
+    </tr>
+    <tr>
+      <th>Gap between photo and reality</th>
+      <td>[radio cast-photo-gap use_label_element default:1 "Better than expected" "Acceptable" "As expected" "Completely different from photo"]</td>
+    </tr>
+    <tr>
+      <th>Language/Communication skills</th>
+      <td>[radio cast-language use_label_element default:1 "Very good" "Good" "Normal" "Bad" "Very bad"]</td>
+    </tr>
+    <tr>
+      <th>Services you wanted<br class="hidden-xs">but didn't receive</th>
+      <td>[textarea cast-service class:text-box_2]</td>
+    </tr>
+    <tr>
+      <th>Would you book this boy<br class="hidden-xs">again in the future?</th>
+      <td>[radio cast-again use_label_element default:1 "Would book again" "Would not book again" "Undecided"]</td>
+    </tr>
+    <tr>
+      <th>Reception service</th>
+      <td>[radio reception-response use_label_element default:1 "Very good" "Good" "Normal" "Bad" "Very bad"]</td>
+    </tr>
+    <tr>
+      <th>Any concerns about phone<br class="hidden-xs">service or customer service</th>
+      <td>[textarea reception-response-concern class:text-box_2]</td>
+    </tr>
+    <tr>
+      <th>How was our website?</th>
+      <td>[radio website-concern use_label_element default:1 "Very good" "Good" "Normal" "Bad" "Very bad"]</td>
+    </tr>
+    <tr>
+      <th>How was our system<br class="hidden-xs">and course offerings?</th>
+      <td>[radio system-concern use_label_element default:1 "Very good" "Good" "Normal" "Bad" "Very bad"]</td>
+    </tr>
+    <tr>
+      <th>How was our pricing?</th>
+      <td>[radio price-concern use_label_element default:1 "Very good" "Good" "Normal" "Bad" "Very bad"]</td>
+    </tr>
+    <tr>
+      <th>Please share any opinions,<br class="hidden-xs">requests, or feedback<br class="hidden-xs">about our store</th>
+      <td>[textarea other-concern class:text-box_2]</td>
+    </tr>
+  </tbody>
+</table>
+<div class="mgb30">
+  <p class="mgb0">This concludes the survey. Please click the submit button below. Thank you very much for your cooperation.<br>We will send you a return email from our store. Thank you for your understanding.</p>
+</div>
+<div class="text-center clearfix"><input type="reset" class="btn btn-black wpcf7c-elm-step1" value="Reset">[submit class:btn class:btn-red "Submit Survey"]</div>

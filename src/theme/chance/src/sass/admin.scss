@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import "common/basic";
+
+.table_noborder {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr > th,
+    > tr > td {
+      border-top: 0;
+      vertical-align: baseline;
+    }
+  }
+}
+
+.table_nowrap {
+  th {
+    white-space: nowrap;
+  }
+}
+
+.mediaimg {
+  width: 100%;
+  max-width: 700px;
+  height: 346px;
+  border: dashed 1px #ddd;
+
+  &.select {
+    height: auto;
+    max-width: auto;
+    border: 0;
+  }
+}
+
+@media (width <= 767px) {
+  .radio-inline,
+  .checkbox-inline {
+    padding: 5px 0 5px 30px;
+  }
+}

@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+main {
+  background: url("../img/common/bg.webp") repeat;
+
+  section {
+    .sectionTitle {
+      text-align: center;
+      background-color: #111;
+      background: url("../img/common/title-bg.webp") 80% no-repeat;
+      height: 140px;
+
+      // display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 15px;
+      position: relative;
+      z-index: 10;
+      background-size: 100% 100%;
+      font-family: serif;
+      box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);  
+
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
+        height: 80px;
+        padding: 0 15px;
+      }
+
+      &--sub {
+        display: inline-block;
+        font-family: "Racing Sans One", sans-serif;
+        font-weight: 400;
+        text-shadow: 1px 1px 1px #999;
+        font-size: 56px;
+        color: var(--shop-main-color);
+        border-bottom: solid 1px #999;
+
+        // padding-bottom: 15px;
+        margin-bottom: 12px;
+        font-style: italic;
+
+        @include media-breakpoint-down(md) {
+          font-size: 26px;
+          padding-bottom: 2px;
+          margin-bottom: 2px;
+        }
+      }
+
+      h2 {
+        color: var(--shop-main-color);
+        font-size: 20px;
+        margin: 0;
+
+        @include media-breakpoint-down(md) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .box {
+      box-shadow: none;
+    }
+  }
+} 
+
+.top_banner {
+  #top_slider{
+    padding: 0.5rem 1rem;
+  }
+}

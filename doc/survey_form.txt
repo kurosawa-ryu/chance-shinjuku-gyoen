@@ -1,0 +1,79 @@
+<table class="table">
+  <tbody>
+    <tr>
+      <th class="relative">ご予約時のお名前<span class="red po-r">※必須</span></th>
+      <td>[text* your-name class:form-control class:input-w1 akismet:author]</td>
+    </tr>
+    <tr>
+      <th class="relative">メールアドレス<span class="red po-r">※必須</span></th>
+      <td>[email* your-email class:form-control class:input-w2 akismet:author_email]</td>
+    </tr>
+    <tr>
+      <th class="relative">ご利用日時<span class="red po-r">※必須</span></th>
+      <td>[select* reservation-month "1月" "2月" "3月" "4月" "5月" "6月" "7月" "8月" "9月" "10月" "11月" "12月"]&nbsp;[select* reservation-day "1日" "2日" "3日" "4日" "5日" "6日" "7日" "8日" "9日" "10日" "11日" "12日" "13日" "14日" "15日" "16日" "17日" "18日" "19日" "20日" "21日" "22日" "23日" "24日" "25日" "26日" "27日" "28日" "29日" "30日" "31日"]&nbsp;&nbsp;[select* reservation-hour "13時" "14時" "15時" "16時" "17時" "18時" "19時" "20時" "21時" "22時" "23時" "24時" "25時"]&nbsp;[select* reservation-minute "00分" "15分" "30分" "45分"]</td>
+    </tr>
+    <tr>
+      <th class="relative">ご利用のコース<span class="red po-r">※必須</span></th>
+      <td>[select* course-type id:course1 "個室" "出張" "デートのみ"]&nbsp;[select* course-duration id:course2 class:mgb10 "60分" "90分" "120分" "180分" "ロング21:00～9:00" "ロング22:00～9:00" "ロング23:00～9:00" "ロング24:00～9:00" "ロング25:00～9:00" "3P60分" "3P90分" "3P120分" "個室スワップ60分" "個室スワップ90分" "オナニー鑑賞30分"]<p class="mgt10 mgb5">その他の場合</p>[text other-course class:form-control class:input-w2]</tr>
+    <tr>
+      <th class="relative">ご指名のボーイ<span class="red po-r">※必須</span></th>
+      <td>[text* cast-name class:form-control class:input-w1]</td>
+    </tr>
+    <tr>
+      <th class="relative">当店の利用回数<span class="red po-r">※必須</span></th>
+      <td>[radio visit-count use_label_element default:1 "初めて" "2回目" "3回目以上"]</td>
+    </tr>
+    <tr>
+      <th class="relative">ボーイの良かった点<br class="hidden-xs">悪かった点、感想等<br class="hidden-xs">ございましたら<br class="hidden-xs">ご記入ください。<span class="red po-r">※必須</span></th>
+      <td>[textarea* cast-review class:text-box_2]<br>[radio publisibal-cast-review use_label_element default:1 "公開可" "公開不可"]<br><span class="red">上記のレビューの内容を一部スタッフの個人ページに掲載させて頂けるお客様はチェックをいれてください。<br>プライベートな個人を特定できる内容は、改訂いたしますが、できる限りそのまま公開いたします。<br>ご協力何卒よろしくお願い申し上げます。</span></td>
+    </tr>
+    <tr>
+      <th>ボーイと対面した時の<br class="hidden-xs">第一印象は</th>
+      <td>[radio cast-impression use_label_element default:1 "大変好印象" "良い" "許せる範囲" "キャンセルを考えた"]</td>
+    </tr>
+    <tr>
+      <th>写真とのギャップ</th>
+      <td>[radio cast-photo-gap use_label_element default:1 "想像以上に良かった" "許せる範囲" "想像通り" "全く写真と違う"]</td>
+    </tr>
+    <tr>
+      <th>言葉づかいや態度</th>
+      <td>[radio cast-language use_label_element default:1 "とても良かった" "良かった" "普通" "悪かった" "とても悪かった"]</td>
+    </tr>
+    <tr>
+      <th>して欲しかったのにして<br class="hidden-xs">くれなかったサービス<br class="hidden-xs">(複数選択可)</th>
+      <td>[textarea cast-service class:text-box_2]</td>
+    </tr>
+    <tr>
+      <th>今後また今回のボーイを<br class="hidden-xs">指名しますか？</th>
+      <td>[radio cast-again use_label_element default:1 "指名する" "指名しない" "どちらともいえない"]</td>
+    </tr>
+    <tr>
+      <th>受付の応対</th>
+      <td>[radio reception-response use_label_element default:1 "とても良かった" "良かった" "普通" "悪かった" "とても悪かった"]</td>
+    </tr>
+    <tr>
+      <th>電話の応対や接客で気に<br class="hidden-xs">なったところ(複数可)</th>
+      <td>[textarea reception-response-concern class:text-box_2]</td>
+    </tr>
+    <tr>
+      <th>当店のウェブサイトは<br class="hidden-xs">どうでしたか？</th>
+      <td>[radio website-concern use_label_element default:1 "とても良かった" "良かった" "普通" "悪かった" "とても悪かった"]</td>
+    </tr>
+    <tr>
+      <th>当店のシステム<br class="hidden-xs">コースについては<br class="hidden-xs">いかがですか？</th>
+      <td>[radio system-concern use_label_element default:1 "とても良かった" "良かった" "普通" "悪かった" "とても悪かった"]</td>
+    </tr>
+    <tr>
+      <th>料金設定は<br class="hidden-xs">いかがですか？</th>
+      <td>[radio price-concern use_label_element default:1 "とても良かった" "良かった" "普通" "悪かった" "とても悪かった"]</td>
+    </tr>
+    <tr>
+      <th>当店へのご意見<br class="hidden-xs">ご要望等何でも<br class="hidden-xs">ご記入ください。</th>
+      <td>[textarea other-concern class:text-box_2]</td>
+    </tr>
+  </tbody>
+</table>
+<div class="mgb30">
+  <p class="mgb0">以上でアンケートは終了でございます。下記の送信ボタンをクリックしてください。ご協力誠にありがとうございました。<br>当店から折り返しメールをお送りいたします。よろしくお願い申し上げます。</p>
+</div>
+<div class="text-center clearfix"><input type="reset" class="btn btn-black wpcf7c-elm-step1" value="リセット">[submit class:btn class:btn-red]</div>

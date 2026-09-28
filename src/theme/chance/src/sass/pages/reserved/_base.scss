@@ -1,0 +1,212 @@
+.reservation-form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+.step-indicator {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #6c757d;
+  background-color: #f8f9fa;
+}
+
+.step-indicator.active {
+  color: #fff;
+  background-color: #ff69b4;
+}
+
+.radio-button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.radio-button-group.vertical {
+  flex-direction: column;
+}
+
+.radio-button-group .btn {
+  white-space: normal;
+  text-align: left;
+  padding: 8px 16px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.radio-button-group:not(.vertical) .btn {
+  width: auto;
+  min-width: 80px;
+}
+
+.btn-check:checked + .btn-outline-primary {
+  background-color: #ff69b4;
+  border-color: #ff69b4;
+  color: #fff;
+}
+
+.btn-outline-primary {
+  color: #ff69b4;
+  border-color: #ff69b4;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ff69b4;
+  border-color: #ff69b4;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #ff69b4;
+  border-color: #ff69b4;
+}
+
+.btn-primary:hover {
+  background-color: #ff4da6;
+  border-color: #ff4da6;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 0 0.25rem rgb(255 105 180 / 25%);
+}
+
+@media (width <= 576px) {
+  .step-indicator {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .reservation-form {
+    padding: 1rem !important;
+  }
+
+  .confirmation-section {
+    padding: 15px;
+  }
+
+  .confirmation-section th {
+    width: 40%;
+    font-size: 13px;
+  }
+
+  .confirmation-section td {
+    width: 60%;
+    font-size: 13px;
+  }
+
+  .radio-button-group {
+    flex-direction: column;
+  }
+
+  .radio-button-group .btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  /* ラジオボタンとチェックボックスのラベルを調整 */
+  .form-check {
+    margin-bottom: 0.5rem;
+  }
+
+  .form-check-label {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* インラインラジオボタンを縦並びに */
+  .form-check-inline {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  /* 日時選択の行間を調整 */
+  .row {
+    row-gap: 0.5rem;
+  }
+
+  /* テキストエリアの高さを調整 */
+  textarea.form-control {
+    min-height: 80px;
+  }
+
+  /* ボタンのサイズを調整 */
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+
+  /* アラートのパディングを調整 */
+  .alert {
+    padding: 1rem;
+  }
+
+  .alert-heading {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+
+  /* サンクスページのスタイル調整 */
+  .thanks-page {
+    padding: 1rem !important;
+  }
+
+  .thanks-page h4 {
+    font-size: 20px;
+  }
+
+  .thanks-page .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .thanks-page .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.confirmation-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.confirmation-section table {
+  margin-bottom: 0;
+}
+
+.confirmation-section th {
+  width: 30%;
+  color: #6c757d;
+  font-weight: 500;
+  vertical-align: top;
+  padding-left: 0;
+}
+
+.confirmation-section td {
+  width: 70%;
+  padding-right: 0;
+}
+
+.thanks-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.thanks-page .card {
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.thanks-page .reservation-details {
+  line-height: 1.8;
+}
+
+.thanks-page .reservation-details p:last-child {
+  margin-bottom: 0;
+} 

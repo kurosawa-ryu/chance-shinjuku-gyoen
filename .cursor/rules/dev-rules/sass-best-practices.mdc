@@ -1,0 +1,101 @@
+---
+description: 
+globs: **/*.scss
+alwaysApply: false
+---
+# SASSのベストプラクティスに関するルール
+
+## コンポーネント/ページごとのファイル整理
+1. ファイル命名規則
+   ```
+   # コンポーネント別
+   components/
+     _staff-card.scss       # スタッフカードコンポーネント
+     _reservation-form.scss # 予約フォームコンポーネント
+     _modal.scss            # モーダルコンポーネント
+     _button.scss           # ボタンコンポーネント
+
+   # ページ別
+   pages/
+     _home.scss             # ホームページ
+     _staff-list.scss       # スタッフ一覧ページ
+     _staff-detail.scss     # スタッフ詳細ページ
+     _reservation.scss      # 予約ページ
+   ```
+
+2. ファイル構成原則
+   - 1コンポーネント1ファイルの原則に従う
+   - 1ページにつき1ファイルの原則に従う
+   - ファイル名はコンポーネント/ページの名前と一致させる
+   - パーシャルファイルは必ず`_`（アンダースコア）で始める
+   - ファイル名はケバブケース（小文字とハイフン）で命名する
+
+
+6. 共通スタイルとの関係
+   - コンポーネント/ページファイルでは固有のスタイルのみを定義
+   - 共通スタイルは基本設定ファイルやミックスインを利用
+   - 必要に応じて変数やミックスインを使用して重複を避ける
+   - CSSモジュールを使用する場合は適切にスコープ化する
+
+7. サブコンポーネントの扱い
+   - 複雑なコンポーネントは必要に応じてサブファイルに分割可能
+   ```
+   components/
+     button/
+       _index.scss        # すべてのボタンスタイルを集約
+       _primary.scss      # プライマリボタン
+       _secondary.scss    # セカンダリボタン
+       _outline.scss      # アウトラインボタン
+   ```
+
+8. ファイル管理の注意点
+   - 未使用のスタイルファイルは削除する
+   - ファイルサイズが大きくなりすぎた場合は分割を検討する
+   - コンポーネントの依存関係を明確にし、循環参照を避ける
+   - ファイル数が増えすぎないよう、適切な粒度を保つ
+
+## CSS Variables（カスタムプロパティ）
+1. 命名規則
+   ```scss
+   // ルート変数定義
+   :root {
+     // カラー
+     --color-primary: #ff0000;
+     --color-secondary: #00ff00;
+     --color-text: #333333;
+     
+     // スペーシング
+     --spacing-unit: 8px;
+     --spacing-small: var(--spacing-unit);
+     --spacing-medium: calc(var(--spacing-unit) * 2);
+     
+     // フォント
+     --font-family-base: 'Noto Sans JP', sans-serif;
+     --font-size-base: 16px;
+     
+     // z-index
+     --z-index-modal: 1000;
+     --z-index-header: 100;
+     
+     // アニメーション
+     --transition-duration: 0.3s;
+     --transition-timing: ease-in-out;
+   }
+   ```
+
+2. 使用ガイドライン
+   - 動的に変更される可能性のある値には必ずCSS Variablesを使用
+   - テーマ切り替えに関わる値はCSS Variablesで管理
+   - メディアクエリでの値の変更にも活用
+   - JavaScriptからの操作が必要な値にはCSS Variablesを使用
+
+## レスポンシブデザイン
+```scss
+// ブレイクポイント
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+);
+``` 

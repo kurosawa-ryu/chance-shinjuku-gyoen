@@ -1,0 +1,63 @@
+# 依存関係モジュール - 大きすぎてインデックス作成に時間がかかるファイル
+node_modules/
+vendor/
+.yarn/
+
+# コンパイル済みアセット
+src/theme/chance/assets/
+**/*.min.js
+**/*.min.css
+**/*.map
+
+# バイナリファイル
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.gif
+**/*.ico
+**/*.svg
+**/*.pdf
+**/*.zip
+**/*.tar
+**/*.gz
+**/*.mp3
+**/*.mp4
+**/*.woff
+**/*.woff2
+**/*.ttf
+**/*.eot
+
+# ログと一時ファイル
+**/logs/
+**/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+**/tmp/
+**/.tmp/
+**/.temp/
+
+# 特定のディレクトリ
+.git/
+.github/
+.vscode/
+.idea/
+dist/
+dist-ssr/
+build/
+
+# WordPress固有
+wp-admin/
+wp-includes/
+wp-content/plugins/*
+!wp-content/plugins/work-manager/
+
+# ロックファイル
+yarn.lock
+package-lock.json
+composer.lock
+
+# フォントアイコン関連（大量のファイルを含む）
+**/font-awesome/**/* 
+# Don't index SpecStory auto-save files, but allow explicit context inclusion via @ references
+.specstory/**

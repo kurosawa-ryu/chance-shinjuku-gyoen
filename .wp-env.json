@@ -1,0 +1,12 @@
+{
+	"core": "https://ja.wordpress.org/wordpress-6.7.2-ja.zip",
+	"config": {
+		"WP_DEBUG": true
+	},
+	"mappings": {
+		"wp-content/themes/chance": "./src/theme/chance",
+		"wp-content/plugins": "./src/plugins",
+		".htaccess": ".htaccess",
+		"scripts": "./scripts"
+	}
+}

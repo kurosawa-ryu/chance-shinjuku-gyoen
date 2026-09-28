@@ -1,0 +1,59 @@
+name: Deploy
+on:
+  workflow_call:
+    inputs:
+      domain:
+        description: 'Domain'
+        type: string
+        required: true
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ vars.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ vars.KNOWN_HOSTS }}
+          config: ${{ vars.SSH_CONFIG }} 
+      - name: ssh test
+        run: |
+          ssh -v chance  'echo "SSH test"'
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Update theme version with commit hash
+        run: |
+          sed -i "s/Version: .*/Version: ${{ github.sha }}/" src/theme/chance/style.css
+
+
+      - name: rsync plugin files
+        run: |
+          rsync -avz --delete ./src/plugins/work-manager/ chance:/home/qdjfbosr/public_html/${{ inputs.domain }}/wp-content/plugins/work-manager/ \
+          --exclude .git \
+          --exclude node_modules \
+          --verbose
+      - name: rsync theme files
+        run: |
+          rsync -avz --delete ./src/theme/chance/ chance:/home/qdjfbosr/public_html/${{ inputs.domain }}/wp-content/themes/chance/ \
+          --exclude .git \
+          --exclude node_modules \
+          --verbose
+      - name: slack notification
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: "【デプロイ完了】\n${{ inputs.domain }}へデプロイしました\n url : https://${{ inputs.domain }}"

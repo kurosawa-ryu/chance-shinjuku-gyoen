@@ -1,0 +1,240 @@
+.work-schedule .bd_gray th {
+    border-top: solid 1px #e1e1e1;
+    border-bottom: solid 1px #e1e1e1;
+    font-weight: bold;
+}
+
+.work-schedule table.widefat {
+    width: 100%;
+}
+
+.work-schedule table.widefat,
+.work-schedule table.widefat th,
+.work-schedule table.widefat td {
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 3px 0;
+}
+
+.work-schedule table.widefat th {
+    font-weight: bold;
+}
+
+.work-schedule table.widefat td:after {
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.work-schedule table.widefat td textarea,
+.work-schedule table.widefat td input[type="text"] {
+    min-height:auto;
+    height: 16px;
+    width: 100%;
+    font-size: 11px;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.work-schedule table.widefat td fieldset {
+    float: left;
+    width: 50%;
+    padding-right: 1px;
+    padding-left: 1px;
+    box-sizing: border-box;
+}
+
+.work-schedule table.widefat tr.relay th,
+.work-schedule table.widefat tr.relay td {
+    border-top: solid 1px #e1e1e1;
+    border-bottom: solid 1px #e1e1e1;
+}
+
+table.widefat td.false input[type="text"],
+table.widefat td.false textarea {
+    color: #00f;
+}
+
+.work-schedule .btn-success {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 26px;
+    height: 28px;
+    margin: 0;
+    padding: 0 10px 1px;
+    cursor: pointer;
+    border: 1px solid #4cae4c;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background-color: #5cb85c;
+    color: #fff;
+    text-decoration: none;
+}
+
+.visible-xs {
+    display: none;
+}
+
+@media(max-width:767px) {
+
+    .visible-xs {
+        display: block;
+    }
+    .work-schedule li.publish,
+    li.all {
+        font-size: 12px;
+        white-space: normal;
+    }
+    .work-schedule table.res_table,
+    .work-schedule table.res_table thead,
+    .work-schedule table.res_table tbody,
+    .work-schedule table.res_table tr,
+    .work-schedule table.res_table th,
+    .work-schedule table.res_table td {
+        display: block;
+        width: 100%;
+    }
+    .work-schedule table.res_table thead {
+        float: left;
+        width: auto;
+        padding: 0 3px;
+    }
+    .work-schedule table.res_table tbody {
+        width: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 0 3px;
+    }
+    .work-schedule table.res_table th {
+        width: 100%!important;
+    }
+    .work-schedule table.res_table tbody tr td {
+        border-bottom: 1px solid #e1e1e1;
+    }
+    .work-schedule table.res_table thead tr th,
+    .work-schedule table.res_table tbody tr td,
+    .work-schedule table.res_table tbody tr td input,
+    .work-schedule table.res_table tbody tr td textarea {
+        height: 18px;
+    }
+    .work-schedule table.res_table thead tr th:first-child,
+    .work-schedule table.res_table tbody tr td:first-child {
+        height: 50px;
+    }
+}
+
+#myupload_images {
+    display: block;
+    clear: both;
+    list-style-type: none;
+}
+
+#myupload_images:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#myupload_images li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+}
+
+#myupload_images li span.img_wrap {
+    display: inline-block;
+    margin: 0;
+    height: auto;
+    width: auto;
+    padding: 4px;
+    position: relative;
+    background: #ccc;
+}
+
+#myupload_images li span img {
+    margin: 0;
+    padding: 0;
+    max-height: 160px;
+    width: auto;
+    vertical-align: text-bottom;
+}
+
+#myupload_images li span input {
+    display: none;
+}
+
+#myupload_images li span a.myupload_images_remove {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+#myupload_images li span a.myupload_images_remove:before {
+    content: '×';
+    display: inline-block;
+    text-decoration: none;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 6px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#myupload_images li span a.myupload_images_remove:hover {
+    background: #aaa;
+}
+
+#myupload_buttons a,
+#myupload_buttons input {
+    padding: 10px 15px;
+    height: 40px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#list-table td {
+    padding: 20px 20px 0px 0px;
+}
+
+#list-table tr td:first-child {
+    min-width: 115px;
+    padding: 20px 20px 0px 0px;
+}
+
+#list-table td textarea {
+    width: 100%;
+}
+
+#list-table td label {
+    display: inline-block;
+}
+.checkbox-inline+.checkbox-inline{
+    margin-left:10px;
+}
+.mgr10{
+    margin-right:10px;
+}

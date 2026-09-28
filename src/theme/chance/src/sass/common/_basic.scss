@@ -1,0 +1,287 @@
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  &:focus,
+  &:active,
+  &:visited {
+    outline: none !important;
+  }
+
+  transition: 0.25s;
+
+  &::before,
+  &::after {
+    transition: 0.25s;
+  }
+}
+
+body:hover {
+  transition: 0s;
+}
+
+//  hr
+
+.hr {
+  border: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+
+//  line-height
+
+.lh_18 {
+  line-height: 1.8;
+}
+
+//  letter-spacing
+
+.ls_-05 {
+  letter-spacing: -0.5px;
+}
+
+@media screen and (width <= 767px) {
+  //  text-align
+  .sp_left {
+    text-align: left;
+  }
+
+}
+
+//  font-size
+
+$fs: 10;
+
+@while $fs < 50 {
+  .fs#{$fs} {
+    font-size: $fs + px;
+
+    @media only screen and (width <= 767px) {
+      font-size: $fs - 2 + px;
+    }
+  }
+
+  $fs: $fs + 2;
+}
+
+@media only screen and (width <= 767px) {
+  $spfs: 11;
+
+  @while $spfs <= 28 {
+    .spfs#{$spfs} {
+      font-size: $spfs + px;
+    }
+
+    $spfs: $spfs + 1;
+  }
+}
+
+//  font-color + bg-color
+
+$color: (
+  "white": #fff,
+  "black": #000,
+  // 変更
+  "red": #d50601,
+  // 変更
+  "blue": #3d74ba,
+  "green": #4cc54f,
+  // 変更
+  "gray": #777,
+  // 変更
+  "lgray": #f1f1f1,
+  // 変更
+  "orange": #ff7800,
+  "sky": #4eb3e3,
+  // 変更
+  "brown": #db7c0b,
+  "purple": #6a5367,
+  "yellow": #ebd200// 変更
+);
+
+// 個別取得　map-get($color, white);
+@each $key, $value in $color {
+  .#{$key} {
+    color: $value;
+
+    a {
+      color: $value;
+    }
+  }
+  .bg_#{$key} {
+    background-color: $value;
+  }
+}
+
+//  margin padding
+
+.mg0 {
+  margin: 0;
+}
+
+$num: 0;
+
+@while $num <= 100 {
+  // .mgt margin top
+  .mgt#{$num} {
+    margin-top: $num + px;
+  }
+
+  // .mgr margin right
+  .mgr#{$num} {
+    margin-right: $num + px;
+  }
+
+  // .mgb margin bottom
+  .mgb#{$num} {
+    margin-bottom: $num + px;
+  }
+
+  // .mgl margin left
+  .mgl#{$num} {
+    margin-left: $num + px;
+  }
+
+  // .pd padding
+  .pd#{$num} {
+    padding: $num + px;
+  }
+
+  // .pdt padding top
+  .pdt#{$num} {
+    padding-top: $num + px;
+  }
+
+  // .pdr padding right
+  .pdr#{$num} {
+    padding-right: $num + px;
+  }
+
+  // .pdb padding bottom
+  .pdb#{$num} {
+    padding-bottom: $num + px;
+  }
+
+  // .pdl padding left
+  .pdl#{$num} {
+    padding-left: $num + px;
+  }
+
+  $num: $num + 5;
+}
+
+@media screen and (width <= 767px) {
+  $spnum: 0;
+
+  @while $spnum <= 100 {
+    // .mgt margin top
+    .spmgt#{$spnum} {
+      margin-top: $spnum + px;
+    }
+
+    // .mgr margin right
+    .spmgr#{$spnum} {
+      margin-right: $spnum + px;
+    }
+
+    // .mgb margin bottom
+    .spmgb#{$spnum} {
+      margin-bottom: $spnum + px;
+    }
+
+    // .mgl margin left
+    .spmgl#{$spnum} {
+      margin-left: $spnum + px;
+    }
+
+    // .pd padding
+    .sppd#{$spnum} {
+      padding: $spnum + px;
+    }
+
+    // .pdt padding top
+    .sppdt#{$spnum} {
+      padding-top: $spnum + px;
+    }
+
+    // .pdr padding right
+    .sppdr#{$spnum} {
+      padding-right: $spnum + px;
+    }
+
+    // .pdb padding bottom
+    .sppdb#{$spnum} {
+      padding-bottom: $spnum + px;
+    }
+
+    // .pdl padding left
+    .sppdl#{$spnum} {
+      padding-left: $spnum + px;
+    }
+
+    $spnum: $spnum + 5;
+  }
+
+  // sp-gutters Class Rules
+
+  .sp-sm-gutters {
+    margin-right: -3px;
+    margin-left: -3px;
+
+    > {
+      [class^="col-"],
+      [class*=" col-"],
+      [class^="flex-"],
+      [class*=" flex-"] {
+        padding-right: 3px;
+        padding-left: 3px;
+      }
+    }
+  }
+
+  .sp-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > {
+      [class^="col-"],
+      [class*=" col-"],
+      [class^="flex-"],
+      [class*=" flex-"] {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.d-grid {
+  display: grid;
+}
+
+.roundedbox {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 15px;
+  box-shadow: 0 3px 10px #0000001a;
+
+  &__title {
+    width: 100%;
+      padding: 15px;
+      font-size: 20px;
+      color: #fff;
+      background-color:  var(--shop-main-color);
+      display: inline-block;
+  }
+}

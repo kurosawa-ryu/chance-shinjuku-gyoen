@@ -1,0 +1,35 @@
+ホームページからアンケート回答がありました（英語版フォーム）。
+------------------------------------------------------------
+名前 = [your-name]様
+メールアドレス = [your-email]
+ご利用日時 = [reservation-month] [reservation-day] [reservation-hour][reservation-minute]
+ご利用コース = [course-type] [course-duration]
+その他のコース = [other-course]
+ご指名ボーイ = [cast-name]
+利用回数 = [visit-count]
+
+━━━━━━━━━━━━━━━━━
+【ボーイ評価】
+━━━━━━━━━━━━━━━━━
+ボーイレビュー = [cast-review]
+レビュー公開 = [publisibal-cast-review]
+第一印象 = [cast-impression]
+写真とのギャップ = [cast-photo-gap]
+言葉遣い = [cast-language]
+サービス不満 = [cast-service]
+再指名 = [cast-again]
+受付応対 = [reception-response]
+
+━━━━━━━━━━━━━━━━━
+【店舗評価】
+━━━━━━━━━━━━━━━━━
+接客の気になった点 = [reception-response-concern]
+ウェブサイト = [website-concern]
+システム = [system-concern]
+料金設定 = [price-concern]
+ご意見ご要望 = [other-concern]
+
+--
+このメールは [_date][_time] chance代々木の英語版アンケートフォームから送信されました
+IP:[_remote_ip] 
+user agent: [_user_agent]

@@ -1,0 +1,8 @@
+@charset "utf-8";
+@import "../../common/basic";
+
+// 各セクションスタイルを個別パーシャルとして読み込む
+@import "banner";
+@import "schedule";
+@import "news";
+@import "mailmagazine";

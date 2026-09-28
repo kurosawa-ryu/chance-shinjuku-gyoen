@@ -1,0 +1,47 @@
+.DS_Store
+desktop.ini
+.sass-cache
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+id_rsa
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore compiled assets in the theme, but keep images and fonts for now
+src/theme/chance/assets/*.js
+src/theme/chance/assets/*.css
+src/theme/chance/assets/*.map
+
+vendor/*
+
+*.cache
+.ftp-deploy-sync-state.json
+
+# SpecStory explanation file
+.specstory/.what-is-this.md
+
+src/plugins/*
+!src/plugins/all-in-one-wp-migration/
+!src/plugins/all-in-one-wp-migration-unlimited-extension/
+!src/plugins/work-manager/
+dump/*
+!dump/.keep

@@ -1,0 +1,66 @@
+name: check
+on:
+  pull_request:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: "node_modules"
+          key: node-${{ hashFiles('yarn.lock') }}
+          restore-keys: node-
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+      - name: Install dependencies
+        run: |
+          corepack enable
+          yarn install
+      - name: lint
+        run: npm run lint
+  php-Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: imagick, intl, zip
+      - name: Cache composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+      - name: Install Composer
+        run: curl -sS https://getcomposer.org/installer | php
+      - name: Install dependencies
+        run: php composer.phar install
+      - name: lint
+        run: php composer.phar lint
+#   php-Test:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Setup PHP
+#       uses: shivammathur/setup-php@v2
+#       with:
+#         php-version: '8.4'
+#         extensions: imagick, intl, zip
+#     - name: Cache composer dependencies
+#       uses: actions/cache@v3
+#       with:
+#         path: vendor
+#         key: composer-${{ hashFiles('composer.lock') }}
+#         restore-keys: composer-
+#     - name: Install Composer
+#       run: curl -sS https://getcomposer.org/installer | php
+#     - name: Install dependencies
+#       run: php composer.phar install
+#     - name: Run PHPUnit tests
+#       run: php composer.phar test

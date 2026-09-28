@@ -1,0 +1,43 @@
+.balloon-reserve {
+  position: relative;
+  display: inline-block;
+  background: #ff4081;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  margin-bottom: 0.5em;
+  animation: pop-balloon 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -16px;
+    border-width: 8px 10px 0;
+    border-style: solid;
+    border-color: #ff4081 transparent transparent;
+    display: block;
+    width: 0;
+  }
+}
+
+@keyframes pop-balloon {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+} 
