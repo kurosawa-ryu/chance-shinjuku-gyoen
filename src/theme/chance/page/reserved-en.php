@@ -9,7 +9,7 @@
 		<p class="mgb30 spmgb15">Reservations can be made by phone, on our official LINE, or through our reservation form.</p>
 		<div class="mgb30">
 			<a href="tel:0353577889" class="btn btn-red">Reservations by phone</a>
-			<a href="https://lin.ee/UDXT9p5" target="_blank" rel="noopener noreferrer" class="btn btn-red">Reservations on official LINE</a>
+			<a href="https://lin.ee/ZD9aG5O" target="_blank" rel="noopener noreferrer" class="btn btn-red">Reservations on official LINE</a>
 		</div>
 		<p class="mgb30 spmgb15">
 			<br>※ When you make a reservation using the reservation form, we will send you an auto-reply e-mail within 5 minutes.

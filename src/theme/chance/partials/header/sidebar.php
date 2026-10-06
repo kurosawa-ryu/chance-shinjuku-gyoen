@@ -71,7 +71,7 @@
 		if ( is_user_logged_in() ) :
 			?>
 			<div class="grid_8 tw"><a href="https://twitter.com/<?php echo esc_attr( $x_id ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-x.png" alt="<?php echo esc_attr( $store_name ); ?>X公式アカウント" width="200" height="50" class="img-fluid" loading="lazy"></a></div>
-			<div class="grid_9 line"><a href="https://lin.ee/UDXT9p5" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-line_01.png" alt="アルバイト募集中" width="200" height="62" class="img-fluid" loading="lazy"></a></div>
+			<div class="grid_9 line"><a href="https://lin.ee/ZD9aG5O" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-line_01.png" alt="アルバイト募集中" width="200" height="62" class="img-fluid" loading="lazy"></a></div>
 		<?php endif; ?>
 	</nav>
 </aside>

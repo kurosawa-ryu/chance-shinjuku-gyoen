@@ -27,7 +27,7 @@
 					<a href="/en/" class="nav-link">English</a>
 				</li>
 				<li class="nav-item tw d-md-none"><a href="https://x.com/chance_yoyogi" target="_blank"><span><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-x.png" alt="CHANCE新宿 X公式アカウント" width="200" height="50" class="img-responsive"></span></a></li>
-				<li class="nav-item line d-md-none"><a href="https://lin.ee/UDXT9p5" target="_blank"><span><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-line_01.png" alt="アルバイト募集中" width="200" height="62" class="img-responsive"></span></a></li>
+				<li class="nav-item line d-md-none"><a href="https://lin.ee/ZD9aG5O" target="_blank"><span><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-line_01.png" alt="アルバイト募集中" width="200" height="62" class="img-responsive"></span></a></li>
 			</ul>
 			<div class="pd10 text-center bg_lgray row d-md-none">
 				<?php
@@ -47,7 +47,7 @@
 				</div>
 				<div class="col-md-6 col-8 text-center footer_address matchbox">
 					<p class="fs18 spfs11 bold mgb5">営業時間&nbsp;13:00&nbsp;~&nbsp;24:00</p>
-					<p class="spfs11 mgb5">新宿御苑前駅 徒歩5分<br />新宿3丁目駅 徒歩5分<br/>JR 千駄ケ谷駅 徒歩4分</p>
+					<p class="spfs11 mgb5">新宿御苑前駅 徒歩5分<br />新宿3丁目駅 徒歩5分</p>
 					<p class="spfs20 mgb0">
 						<a href="tel:0353577889">TEL&nbsp;03-5357-7889</a>
 					</p>

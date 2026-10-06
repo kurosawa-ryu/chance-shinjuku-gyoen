@@ -21,7 +21,7 @@ const ThanksPageEn: React.FC = () => {
 				<Button variant="primary" href="/">
 					Go to Top Page
 				</Button>
-				<Button variant="outline-primary" href="/cast">
+				<Button variant="outline-primary" href="/en/cast">
 					View Our Boys
 				</Button>
 			</div>

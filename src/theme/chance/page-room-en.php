@@ -17,7 +17,7 @@ get_header( 'en' ); ?>
 			to the private room.
 		</p>
 	</div>
-	<iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=163zSu2yk5WsXF-MXHL0sVmsc90ewMgE&ehbc=2E312F" width="910" height="440"></iframe>
-	<a class="map__btn" target="_blank" href="https://www.google.com/maps/d/u/0/edit?mid=163zSu2yk5WsXF-MXHL0sVmsc90ewMgE&usp=sharing">View larger map</a>
+	<iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=1gVr-y0F8IwhLq0OS37845twa8Zplg-I&ehbc=2E312F" width="910" height="440"></iframe>
+	<a class="map__btn" target="_blank" href="https://www.google.com/maps/d/u/0/edit?mid=1gVr-y0F8IwhLq0OS37845twa8Zplg-I&usp=sharing">View larger map</a>
 </section>
 <?php get_footer( 'en' ); ?>

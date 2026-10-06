@@ -77,7 +77,7 @@ function my_front_script() {
 	if ( is_page( 'reserved' ) ) {
 		wp_enqueue_script( 'reserved', get_template_directory_uri() . '/assets/reserved.js', array(), get_asset_version(), true, array( 'type' => 'module' ) );
 	}
-	if ( is_page( 'ank' ) ) {
+	if ( is_page( array( 'ank', 'ank-en' ) ) ) {
 		wp_enqueue_script( 'survey', get_template_directory_uri() . '/assets/survey.js', array(), get_asset_version(), true, array( 'type' => 'module' ) );
 	}
 	// recruitページ
@@ -88,8 +88,9 @@ function my_front_script() {
 			'recruit',
 			'recruitData',
 			array(
-				'nonce'    => wp_create_nonce( 'wp_rest' ), // REST API用のノンス
-				'ajax_url' => admin_url( 'admin-ajax.php' ), // 必要であれば
+				'nonce'    => wp_create_nonce( 'wp_rest' ),
+				'formId'   => (string) get_option( 'wpcf7_recruit_form_id', '110' ),
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
 			)
 		);
 	}

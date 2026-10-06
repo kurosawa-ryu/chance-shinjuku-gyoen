@@ -295,6 +295,12 @@ add_filter( 'parse_query', 'remove_page_view' ); // フィルターフックの�
  */
 function cushion_redirect() {
 
+	if ( is_404() ) {
+
+		return true;
+
+	}
+
 	if ( is_bot() ) {
 		return true;
 	}
@@ -559,7 +565,7 @@ add_action( 'after_setup_theme', 'create_menu_area' );
 
 function ag_send_mail_smtp( $phpmailer ) {
 	//ホスト名にlocalhostが含まれるとき
-	if ( strpos( $_SERVER['HTTP_HOST'], 'localhost' ) !== false ) {
+	if ( isset( $_SERVER['HTTP_HOST'] ) && strpos( $_SERVER['HTTP_HOST'], 'localhost' ) !== false ) {
 		/* SMTP有効設定 */
 		$phpmailer->isSMTP();
 		// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
@@ -589,6 +595,26 @@ function ag_send_mail_smtp( $phpmailer ) {
 	}
 }
 add_action( 'phpmailer_init', 'ag_send_mail_smtp' );
+
+/**
+ * Contact Form 7の_mail / _mail_2が二重シリアライズされている場合の自動復元
+ */
+add_filter(
+	'wpcf7_contact_form_properties',
+	function( $properties, $contact_form ) {
+		foreach ( array( 'mail', 'mail_2' ) as $prop ) {
+			if ( isset( $properties[ $prop ] ) && is_string( $properties[ $prop ] ) ) {
+				$unserialized = maybe_unserialize( $properties[ $prop ] );
+				if ( is_array( $unserialized ) ) {
+					$properties[ $prop ] = $unserialized;
+				}
+			}
+		}
+		return $properties;
+	},
+	10,
+	2
+);
 
 
 // 予約フォームのメール１の本文をok

@@ -119,7 +119,7 @@
     bottom: 0;
     max-height: 150px;
     min-height: 48px;
-    background: rgba(248 161 197 / 75%);
+    background: rgba(167 212 235 / 75%);
     pointer-events: auto;
     display: flex;
     justify-content: center;
@@ -189,7 +189,7 @@
 
 .recruit-title {
   width: 100%;
-  background: #d83473;
+  background: #0068B7;
   position: relative;
   margin-top: -2px;
   padding-top: 20px;
@@ -208,7 +208,7 @@
     display: block;
     width: 100%;
     background: #e1efff;
-    color: #d83473;
+    color: #0068B7;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 800;
@@ -231,12 +231,12 @@
     .btn-danger {
       background-color: #fff;
       border-color: #fff;
-      color: #d83473;
+      color: #0068B7;
       
       &:hover {
         background-color: #f8f8f8;
         border-color: #f8f8f8;
-        color: #d83473;
+        color: #0068B7;
         transform: translateY(-5px);
       }
     }
@@ -269,7 +269,7 @@
   }
 
   .card-header {
-    background: #ef8bb1;
+    background: #6BB6E3;
     color: #fff;
     text-align: center;
     font-size: 1.5rem;
@@ -296,7 +296,7 @@
 }
 
 .recruit-example {
-  background: #d83473;
+  background: #0068B7;
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -366,7 +366,7 @@
         right: -15px;
         width: 30px;
         height: 30px;
-        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ef8bb1' class='bi bi-arrow-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8'/%3E%3C/svg%3E") no-repeat center;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236BB6E3' class='bi bi-arrow-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8'/%3E%3C/svg%3E") no-repeat center;
         margin-top: -15px;
         z-index: 1;
       }
@@ -379,7 +379,7 @@
 
   &__step-number {
     display: inline-block;
-    background: #ef8bb1;
+    background: #6BB6E3;
     color: #fff;
     padding: 5px 15px;
     border-radius: 20px;
@@ -391,7 +391,7 @@
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #d83473;
+    color: #0068B7;
 
     i {
       margin-right: 5px;
@@ -509,7 +509,7 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background-color: #d83473;
+        background-color: #0068B7;
       }
     }
   }
@@ -529,7 +529,7 @@
       top: 0.3rem;
       bottom: 0.3rem;
       width: 4px;
-      background-color: #d83473;
+      background-color: #0068B7;
       border-radius: 2px;
     }
 
@@ -554,20 +554,20 @@
   .accordion {
     --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgb(216 52 115 / 25%);
     --bs-accordion-active-color: #fff;
-    --bs-accordion-active-bg: #d83473;
+    --bs-accordion-active-bg: #0068B7;
   }
 
   .accordion-button {
     color: #333;
     
     &:focus {
-      border-color: #ef8bb1;
+      border-color: #6BB6E3;
       box-shadow: 0 0 0 0.25rem rgb(216 52 115 / 25%);
     }
     
     &:not(.collapsed) {
       color: #fff;
-      background-color: #d83473;
+      background-color: #0068B7;
       
       &::after {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
@@ -634,7 +634,7 @@
   padding: 30px 0;
   
   &__box {
-    background: linear-gradient(135deg, #d83473, #ef8bb1);
+    background: linear-gradient(135deg, #0068B7, #6BB6E3);
     border-radius: 10px;
     padding: 30px;
     color: #fff;
@@ -661,12 +661,12 @@
   .btn-danger {
     background-color: #fff;
     border-color: #fff;
-    color: #d83473;
+    color: #0068B7;
     
     &:hover {
       background-color: #f8f8f8;
       border-color: #f8f8f8;
-      color: #d83473;
+      color: #0068B7;
       transform: translateY(-5px);
     }
   }

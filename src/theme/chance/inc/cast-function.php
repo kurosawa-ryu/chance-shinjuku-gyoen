@@ -226,7 +226,7 @@ function get_cast_btns_en( $cast_data = null ) {
 	}
 
 	if ( count( $btns ) < 3 ) {
-		$btns[] = '<li><a href="/ank/?boy=' . urlencode( $name_en ) . '" role="button" class="btn"><i class="bi bi-chat-left-text"></i><span>Survey</span></a></li>';
+		$btns[] = '<li><a href="/ank-en/?boy=' . urlencode( $name_en ) . '" role="button" class="btn"><i class="bi bi-chat-left-text"></i><span>Survey</span></a></li>';
 	}
 	if ( count( $btns ) < 2 ) {
 		$btns[] = '<li><a href="/en/reserved/?boy=' . urlencode( $name_en ) . '" role="button" class="btn btn-green"><i class="bi bi-calendar-check"></i><span>Reserve</span></a></li>';

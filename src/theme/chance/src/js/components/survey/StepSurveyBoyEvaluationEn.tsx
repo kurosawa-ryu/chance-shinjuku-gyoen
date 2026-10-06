@@ -63,6 +63,7 @@ const StepSurveyBoyEvaluationEn: React.FC<StepSurveyBoyEvaluationEnProps> = ({
 					errors={errors}
 					rows={5}
 					placeholder="Please share your feedback about the boy"
+					maxLength={2000}
 					required
 				/>
 				<div className="mt-2">

@@ -29,11 +29,11 @@ main {
 
       &--sub {
         display: inline-block;
-        font-family: "Racing Sans One", sans-serif;
+        font-family: "Abril Fatface", "Racing Sans One", sans-serif;
         font-weight: 400;
-        text-shadow: 1px 1px 1px #999;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 1px 1px 1px #333333;
         font-size: 56px;
-        color: var(--shop-main-color);
+        color: #fff;
         border-bottom: solid 1px #999;
 
         // padding-bottom: 15px;
@@ -48,7 +48,8 @@ main {
       }
 
       h2 {
-        color: var(--shop-main-color);
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 1px 1px 1px #333333;
         font-size: 20px;
         margin: 0;
 

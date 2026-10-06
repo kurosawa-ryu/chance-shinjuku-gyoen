@@ -146,7 +146,7 @@ if ( $show_today_shift ) :
 </section>
 
 <section id="top-recruit-hero" class="recruit-hero container">	
-	<img src="<?php echo get_template_directory_uri(); ?>/public/pages/recruit/hero_bg4.jpg" alt="スタッフ大募集" class="img-fluid recruit-hero__bg">
+	<img src="<?php echo get_template_directory_uri(); ?>/public/pages/recruit/hero_bg.jpg" alt="スタッフ大募集" class="img-fluid recruit-hero__bg">
 	<div class="recruit-hero__overlay">
 		<div class="recruit-hero__bar">
 			<h1 class="recruit-hero__catch">働くなら、今が CHANCE！</h1>

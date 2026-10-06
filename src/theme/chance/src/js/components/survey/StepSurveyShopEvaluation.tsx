@@ -94,6 +94,7 @@ const StepSurveyShopEvaluation: React.FC<StepSurveyShopEvaluationProps> = ({
 				errors={errors}
 				rows={5}
 				placeholder="ご意見・ご要望をご記入ください"
+				maxLength={2000}
 			/>
 
 			<div className="mb-4">

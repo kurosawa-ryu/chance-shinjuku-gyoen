@@ -14,7 +14,7 @@
 
 .step-indicator.active {
   color: #fff;
-  background-color: #ff69b4;
+  background-color: #00A3E0;
 }
 
 .radio-button-group {
@@ -41,36 +41,36 @@
 }
 
 .btn-check:checked + .btn-outline-primary {
-  background-color: #ff69b4;
-  border-color: #ff69b4;
+  background-color: #00A3E0;
+  border-color: #00A3E0;
   color: #fff;
 }
 
 .btn-outline-primary {
-  color: #ff69b4;
-  border-color: #ff69b4;
+  color: #00A3E0;
+  border-color: #00A3E0;
 }
 
 .btn-outline-primary:hover {
-  background-color: #ff69b4;
-  border-color: #ff69b4;
+  background-color: #00A3E0;
+  border-color: #00A3E0;
   color: #fff;
 }
 
 .btn-primary {
-  background-color: #ff69b4;
-  border-color: #ff69b4;
+  background-color: #00A3E0;
+  border-color: #00A3E0;
 }
 
 .btn-primary:hover {
-  background-color: #ff4da6;
-  border-color: #ff4da6;
+  background-color: #4AA3DF;
+  border-color: #4AA3DF;
 }
 
 .form-select:focus,
 .form-control:focus {
-  border-color: #ff69b4;
-  box-shadow: 0 0 0 0.25rem rgb(255 105 180 / 25%);
+  border-color: #00A3E0;
+  box-shadow: 0 0 0 0.25rem rgb(74 163 223 / 25%);
 }
 
 @media (width <= 576px) {

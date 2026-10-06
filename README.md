@@ -1,4 +1,4 @@
-# Chance Yoyogi (CHANCE代々木)
+# Chance Shinjuku Gyoen (CHANCE新宿御苑)
 
 このプロジェクトは、ゲイ向けの風俗店（売り専）のホームページを制作するためのWordPressテーマおよびプラグイン開発リポジトリです。
 
@@ -53,7 +53,7 @@ docker compose build
 ```bash
 docker compose up -d
 ```
-初期データの用意が完了していれば、http://chance-yoyogi.jp:8001 でアクセスが可能
+初期データの用意が完了していれば、http://chance-shinjukugyoen.jp:8001 でアクセスが可能
 
 6. (初回のみ)WordPressの初期データを用意する
 

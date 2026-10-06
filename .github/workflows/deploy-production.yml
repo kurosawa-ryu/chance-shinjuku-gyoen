@@ -8,4 +8,4 @@ jobs:
   deploy:
     uses: ./.github/workflows/_deploy.yml
     with:
-      domain: chance-yoyogi.jp
+      domain: chance-shinjukugyoen.jp

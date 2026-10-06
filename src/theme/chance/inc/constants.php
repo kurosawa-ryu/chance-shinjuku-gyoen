@@ -1,4 +1,5 @@
 <?php
+
 define(
 	'CHANCE_SHOP_LIST',
 	array(
@@ -25,6 +26,10 @@ define(
 		array(
 			'name' => 'CHANCE新大久保',
 			'url'  => 'https://chance-shinokubo.jp/',
+		),
+		array(
+			'name' => 'CHANCE代々木',
+			'url'  => 'https://chance-yoyogi.jp/',
 		),
 		array(
 			'name' => 'CHANCE新宿',

@@ -26,6 +26,6 @@
 プレイ・コースでの要望 = [play-requests]
 
 --
-このメールは [_date][_time] chance代々木のお問い合わせフォームから送信されました
+このメールは [_date][_time] chance新宿のお問い合わせフォームから送信されました
 IP:[_remote_ip] 
 user agent: [_user_agent]

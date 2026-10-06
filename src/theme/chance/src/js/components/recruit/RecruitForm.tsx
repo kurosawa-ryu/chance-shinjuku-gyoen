@@ -14,7 +14,13 @@ import React, { useState, useRef } from "react";
 import { Alert, Button, Form, InputGroup } from "react-bootstrap";
 import { type Path, useForm } from "react-hook-form";
 
-const FORM_ID = "110";
+const recruitData = (
+	window as Window & {
+		recruitData?: { nonce?: string; formId?: string };
+	}
+).recruitData;
+
+const FORM_ID = recruitData?.formId || "110";
 const ENDPOINT = `/wp-json/contact-form-7/v1/contact-forms/${FORM_ID}/feedback`;
 const UNIT_TAG = `wpcf7-f${FORM_ID}-p1-o1`;
 
@@ -74,21 +80,32 @@ const RecruitForm: React.FC = () => {
 
 	const onSubmit = async (data: RecruitFormData) => {
 		try {
-			const { "email-confirm": emailConfirm, ...rest } = data;
-			const sendData = {
-				...rest,
-				_wpcf7_unit_tag: UNIT_TAG,
-			};
+			const { "email-confirm": _emailConfirm, ...rest } = data;
+			const formData = new FormData();
 
-			const response = await axios.post(ENDPOINT, sendData, {
-				headers: {
-					"Content-Type": "multipart/form-data",
-				},
-			});
+			for (const [key, value] of Object.entries(rest)) {
+				if (value !== undefined && value !== null && value !== "") {
+					formData.append(key, String(value));
+				}
+			}
 
-			console.log(response);
-			goToStep(3, "recruit-form");
+			formData.append("_wpcf7_unit_tag", UNIT_TAG);
+
+			const headers: Record<string, string> = {};
+			if (recruitData?.nonce) {
+				headers["X-WP-Nonce"] = recruitData.nonce;
+			}
+
+			const response = await axios.post(ENDPOINT, formData, { headers });
+
+			if (response.data?.status === "mail_sent") {
+				goToStep(3, "recruit-form");
+			} else {
+				console.error("応募送信失敗:", response.data);
+				setIsError(true);
+			}
 		} catch (error) {
+			console.error("応募送信エラー:", error);
 			setIsError(true);
 		}
 	};

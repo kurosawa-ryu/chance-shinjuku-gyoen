@@ -14,7 +14,7 @@ get_header(); ?>
 				<a href="tel:0353577889" class="btn btn-red rounded">
 					<i class="bi bi-telephone-fill" aria-hidden="true"></i> 電話でのご予約
 				</a>
-				<a href="https://lin.ee/UDXT9p5" target="_blank" rel="noopener noreferrer" class="btn btn-red rounded">
+				<a href="https://lin.ee/ZD9aG5O" target="_blank" rel="noopener noreferrer" class="btn btn-red rounded">
 					<i class="bi bi-line" aria-hidden="true"></i> LINEでのご予約
 				</a>
 			</div>

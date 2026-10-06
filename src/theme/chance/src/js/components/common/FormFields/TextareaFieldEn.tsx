@@ -15,6 +15,7 @@ type TextareaFieldProps<T extends FieldValues> = {
 	required?: boolean;
 	rows?: number;
 	placeholder?: string;
+	maxLength?: number;
 };
 
 const TextareaFieldEn = <T extends FieldValues>({
@@ -25,6 +26,7 @@ const TextareaFieldEn = <T extends FieldValues>({
 	required = false,
 	rows = 3,
 	placeholder,
+	maxLength,
 }: TextareaFieldProps<T>) => {
 	const requiredLabel = required ? (
 		<span className="text-danger"> *Required</span>
@@ -40,6 +42,7 @@ const TextareaFieldEn = <T extends FieldValues>({
 				as="textarea"
 				rows={rows}
 				placeholder={placeholder}
+				maxLength={maxLength}
 				{...register(name)}
 				isInvalid={!!error}
 			/>

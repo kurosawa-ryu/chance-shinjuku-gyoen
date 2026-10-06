@@ -15,7 +15,7 @@ import React, { useRef, useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import { type Path, useForm } from "react-hook-form";
 
-const FORM_ID = "111"; // Contact Form 7のID（変更が必要）
+const FORM_ID = "11964"; // Contact Form 7のID
 const ENDPOINT = `/wp-json/contact-form-7/v1/contact-forms/${FORM_ID}/feedback`;
 const UNIT_TAG = `wpcf7-f${FORM_ID}-p1-o1`;
 
@@ -171,7 +171,7 @@ const SurveyFormEn: React.FC = () => {
 							<Button
 								variant="primary"
 								onClick={() => handleNext("survey-form")}
-								disabled={!isValid && currentStep < 4}
+								disabled={isSubmitting}
 							>
 								{currentStep === 3 ? "Review" : "Next"}
 							</Button>

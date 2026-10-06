@@ -2,8 +2,8 @@
 set -euo pipefail
 
 BACKUP_FILE_PATH=${BACKUP_FILE_PATH:-"/opt/dump/backup.wpress"}
-WP_URL=${WP_URL:-"http://chance-yoyogi.jp:8001"}
-WP_TITLE=${WP_TITLE:-"チャンス代々木"}
+WP_URL=${WP_URL:-"http://chance-shinjukugyoen.jp:8001"}
+WP_TITLE=${WP_TITLE:-"チャンス新宿御苑"}
 WP_ADMIN_USER=${WP_ADMIN_USER:-"admin"}
 WP_ADMIN_PASSWORD=${WP_ADMIN_PASSWORD:-"admin"}
 WP_ADMIN_EMAIL=${WP_ADMIN_EMAIL:-"admin@example.com"}

@@ -23,11 +23,14 @@ const StepSurveyBasicInfoEn: React.FC<StepSurveyBasicInfoEnProps> = ({
 	errors,
 }) => {
 	const selectedCourseType = watch("course-type");
-	const courseDurationOptions = selectedCourseType
-		? courseDurationsEn[selectedCourseType as keyof typeof courseDurationsEn] ||
-			[]
-		: [];
 
+	const selectedCourseTypeKey = Object.entries(courseTypesEn).find(
+		([, value]) => value === selectedCourseType,
+	)?.[0] as keyof typeof courseDurationsEn | undefined;
+
+	const courseDurationOptions = selectedCourseTypeKey
+		? courseDurationsEn[selectedCourseTypeKey] || []
+		: [];
 	return (
 		<>
 			<InputFieldEn<SurveyFormDataEn>

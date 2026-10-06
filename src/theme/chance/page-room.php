@@ -11,7 +11,7 @@ get_header(); ?>
 			お伝えさせて頂きました指定場所より<br class="visible-xs">当店へお電話下さい。<br>
 			お電話にて個室までご案内させて頂きます。</p>
 	</div>
-	<iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=163zSu2yk5WsXF-MXHL0sVmsc90ewMgE&ehbc=2E312F" width="910" height="440"></iframe>
-	<a class="map__btn" target="_blank" href="https://www.google.com/maps/d/u/0/edit?mid=163zSu2yk5WsXF-MXHL0sVmsc90ewMgE&usp=sharing">大きな地図で見る</a>
+	<iframe class="map" src="https://www.google.com/maps/d/u/0/embed?mid=1gVr-y0F8IwhLq0OS37845twa8Zplg-I&ehbc=2E312F" width="910" height="440"></iframe>
+	<a class="map__btn" target="_blank" href="https://www.google.com/maps/d/u/0/edit?mid=1gVr-y0F8IwhLq0OS37845twa8Zplg-I&usp=sharing">大きな地図で見る</a>
 </section>
 <?php get_footer(); ?>

@@ -15,7 +15,7 @@
 					$x_id       = chance_get_x_id();
 				?>
 				<li class="nav-item tw d-md-none"><a href="https://twitter.com/<?php echo esc_attr( $x_id ); ?>" target="_blank"><span><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-x.png" alt="<?php echo esc_attr( $store_name ); ?>X公式アカウント" width="200" height="50" class="img-responsive"></span></a></li>
-				<li class="nav-item line d-md-none"><a href="https://lin.ee/UDXT9p5" target="_blank"><span><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-line_01.png" alt="アルバイト募集中" width="200" height="62" class="img-responsive"></span></a></li>
+				<li class="nav-item line d-md-none"><a href="https://lin.ee/ZD9aG5O" target="_blank"><span><img src="<?php echo get_template_directory_uri(); ?>/src/img/common/side-line_01.png" alt="アルバイト募集中" width="200" height="62" class="img-responsive"></span></a></li>
 			</ul>
 			<div class="pd10 text-center bg_lgray row d-md-none">
 			</div>

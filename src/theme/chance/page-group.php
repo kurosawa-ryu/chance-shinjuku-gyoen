@@ -94,7 +94,19 @@ if ( is_en() ) {
 				</ul>
 				<a href="https://chance-shinokubo.jp/" target="_blank" class="btn btn-red mt-3 w-100">新大久保店サイトへアクセス</a>
 			</div>
-		</div>
+			<div class="col-12 col-md-6">
+				<a href="https://chance-yoyogi.jp/" target="_blank" class="mx-auto d-block w-100">
+					<img src="<?php echo get_template_directory_uri(); ?>/public/common/chance_yoyogi_logo.png" alt="CHANCE代々木" class="w-100">
+				</a>
+			</div>
+			<div class="col-12 col-md-6">
+				<h4 class="mb-3 fw-bold">CHANCE代々木</h4>
+				<p class="mb-2">関東最大級の大型売り専</p>
+				<ul class="mb-3">
+					<li>新宿2丁目からすぐの代々木駅最寄り</li>
+				</ul>
+				<a href="https://chance-yoyogi.jp/" target="_blank" class="btn btn-red mt-3 w-100">代々木店サイトへアクセス</a>
+			</div>
 	</div>
 	<div class="container roundedbox my-4 shadow-lg">
 		<h3 class="roundedbox__title">ゲイバー</h3>

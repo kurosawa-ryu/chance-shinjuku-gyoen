@@ -30,6 +30,6 @@
 ご意見ご要望 = [other-concern]
 
 --
-このメールは [_date][_time] chance代々木のアンケートフォームから送信されました
+このメールは [_date][_time] chance新宿のアンケートフォームから送信されました
 IP:[_remote_ip] 
 user agent: [_user_agent]

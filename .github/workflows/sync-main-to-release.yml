@@ -126,7 +126,7 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-            text: "【代々木|リリースPR作成】\nmain → release の同期PRが作成されました\n${{ steps.create_pr.outputs.pr_url }}\n\nレビューをお願いします。"
+            text: "【新宿|リリースPR作成】\nmain → release の同期PRが作成されました\n${{ steps.create_pr.outputs.pr_url }}\n\nレビューをお願いします。"
 
       # 9. Slack通知（PR更新時）
       - name: Notify Slack on PR update
@@ -136,4 +136,4 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-            text: "【代々木|リリースPR更新】\nmain → release の同期PRが更新されました\n${{ steps.update_pr.outputs.pr_url }}\n\n新しい変更が追加されています。"
+            text: "【新宿|リリースPR更新】\nmain → release の同期PRが更新されました\n${{ steps.update_pr.outputs.pr_url }}\n\n新しい変更が追加されています。"

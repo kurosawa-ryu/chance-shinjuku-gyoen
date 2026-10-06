@@ -3,7 +3,7 @@
 get_header(); ?>
 
 <section id="page-recruit-hero" class="recruit-hero container">
-	<img src="<?php echo get_template_directory_uri(); ?>/public/pages/recruit/hero_bg4.jpg" alt="スタッフ大募集" class="img-fluid recruit-hero__bg">
+	<img src="<?php echo get_template_directory_uri(); ?>/public/pages/recruit/hero_bg.jpg" alt="スタッフ大募集" class="img-fluid recruit-hero__bg">
 	<!-- <img src="<?php echo get_template_directory_uri(); ?>/public/pages/recruit/boy1.webp" alt="スタッフ大募集" class="recruit-hero__boy1">
 	<img src="<?php echo get_template_directory_uri(); ?>/public/pages/recruit/boy2.webp" alt="スタッフ大募集" class="recruit-hero__boy2"> -->
 	<div class="recruit-hero__overlay">
@@ -274,7 +274,6 @@ get_header(); ?>
 							<ul class="recruit-info__list">
 								<li>新宿御苑前駅 徒歩5分</li>
 								<li>新宿3丁目駅 徒歩5分</li>
-								<li>JR千駄ケ谷駅 徒歩4分</li>
 							</ul>
 						</td>
 					</tr>

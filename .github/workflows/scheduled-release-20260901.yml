@@ -68,11 +68,11 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-            text: "【代々木|定時リリース失敗】\n2026-09-01 00:00 JST の本番デプロイ準備に失敗しました\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            text: "【新宿|定時リリース失敗】\n2026-09-01 00:00 JST の本番デプロイ準備に失敗しました\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
   deploy:
     needs: prepare
     if: needs.prepare.outputs.proceed == 'true'
     uses: ./.github/workflows/_deploy.yml
     with:
-      domain: chance-yoyogi.jp
+      domain: chance-shinjukugyoen.jp

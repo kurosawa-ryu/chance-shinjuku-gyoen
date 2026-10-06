@@ -94,7 +94,10 @@ export const surveySchemaEn = z
 	})
 	.refine(
 		(data) => {
-			if (data["your-email"] && data["your-email"] !== data["email-confirm"]) {
+			if (
+			data["email-confirm"] &&
+			data["your-email"] !== data["email-confirm"]
+		) {
 				return false;
 			}
 			return true;

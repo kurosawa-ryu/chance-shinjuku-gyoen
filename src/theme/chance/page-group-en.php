@@ -81,6 +81,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/public/common/chance_shinokubo_logo.png" alt="CHANCE Shinokubo" class="w-100">
 				</a>
 			</div>
+
 			<div class="col-12 col-md-6">
 				<h4 class="mb-3 fw-bold">CHANCE Shinokubo</h4>
 				<p class="mb-2">One of the largest adult services in the Kanto region</p>
@@ -89,7 +90,19 @@
 				</ul>
 				<a href="https://chance-shinokubo.jp/" target="_blank" class="btn btn-red mt-3 w-100">Access the Shinokubo Site</a>
 			</div>
-		</div>
+			<div class="col-12 col-md-6">
+				<a href="https://chance-yoyogi.jp/" target="_blank" class="mx-auto d-block w-100">
+					<img src="<?php echo get_template_directory_uri(); ?>/public/common/chance_yoyogi_logo.png" alt="CHANCE Yoyogi" class="w-100">
+				</a>
+			</div>
+			<div class="col-12 col-md-6">
+				<h4 class="mb-3 fw-bold">CHANCE Yoyogi</h4>
+				<p class="mb-2">One of the largest gay men's establishments in the Kanto area</p>
+				<ul class="mb-3">
+					<li>Located near Yoyogi Station, just a short distance from Shinjuku 2-chome</li>
+				</ul>
+				<a href="https://chance-yoyogi.jp/" target="_blank" class="btn btn-red mt-3 w-100">Access Yoyogi Store Website</a>
+			</div>
 	</div>
 	<div class="container box my-4 shadow-lg">
 		<h3 class="hedding_3">Gay Bars</h3>

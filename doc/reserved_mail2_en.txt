@@ -32,7 +32,7 @@ Play/Course Requests: [play-requests]
 ※Email reservations may take some time to respond (we can respond within 24 hours). For same-day or urgent reservations, please call us.
 
 ━━━━━━━━━━━━━━━━━
-CHANCE Yoyogi
-HP: http://chance-yoyogi.jp.localhost:8001
+CHANCE Shinjuku
+HP: http://chance-shinjukugyoen.jp.localhost:8001
 TEL:
 ━━━━━━━━━━━━━━━━━

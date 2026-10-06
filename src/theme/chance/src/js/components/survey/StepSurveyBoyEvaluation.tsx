@@ -64,6 +64,7 @@ const StepSurveyBoyEvaluation: React.FC<StepSurveyBoyEvaluationProps> = ({
 					errors={errors}
 					rows={5}
 					placeholder="ボーイに対する感想をご記入ください"
+					maxLength={2000}
 					required
 				/>
 				<div className="mt-2">
